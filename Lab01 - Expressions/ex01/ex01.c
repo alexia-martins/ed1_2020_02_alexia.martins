@@ -2,7 +2,7 @@
 
 int main(){
     printf("<< Calculo do Quadrado de n >>\n");
-    printf("mudou\n");
+    printf("mudou 2\n");
 }
 
 /*
