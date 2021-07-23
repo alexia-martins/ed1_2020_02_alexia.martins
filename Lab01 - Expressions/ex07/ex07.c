@@ -1,7 +1,18 @@
 #include <stdio.h>
 
 int main() {
+    int diast, diasv=30, vbruto;
+    float vliq, ISS, IR;
     printf("<< Pagamento encanador >>\n");
+    printf ("Digite o numero de dias trabalhados: ");
+    scanf ("%d", &diast);
+    vbruto= diast*diasv;
+    IR = vbruto*0.08;
+    ISS = vbruto*0.04;
+    vliq=((vbruto-IR)-ISS);
+    printf ("Valor bruto R$ %d\n", vbruto);
+    printf ("Valor liquido R$ %.0f\n", vliq);
+    printf ("ISS R$ %.0f\nIR R$ %.0f", ISS, IR);
 }
 
 /*

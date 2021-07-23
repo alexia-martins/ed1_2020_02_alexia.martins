@@ -4,7 +4,7 @@ int main() {
     float cels, faren;
     printf("<< Conversor Temperatura >>\n");
     printf ("Digite a temperatura (em Celsius):");
-    scanf ("%f", cels);
+    scanf ("%f", &cels);
     faren = (cels*1.8)+32;
     printf (" %.0f graus Celsius correspondem a %.0f Fahrenheit", cels, faren);
 }
