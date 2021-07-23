@@ -1,8 +1,12 @@
 #include <stdio.h>
 
 int main(){
+    float n, quad;
     printf("<< Calculo do Quadrado de n >>\n");
-    printf("mudou 2\n");
+    printf("Digite um numero:");
+    scanf("%f", &n);
+	quad = n*n;
+    printf(" O valor de %.1f ao quadrado e %.2f", n, quad);
 }
 
 /*
