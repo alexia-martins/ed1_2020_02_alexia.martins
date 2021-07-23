@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 int main() {
 float aposta1, aposta2, aposta3, premio, premioap1, premioap2, premioap3, ttAposta;
 printf ("<< Loteria >>\n");
@@ -21,17 +22,21 @@ printf ("<< Loteria >>\n");
 
 
 /*
-EX 10: 
-Três amigos jogaram na loteria.
-Caso eles ganhem, o prêmio deve ser repartido proporcionalmente ao valor que cada deu para a realização da aposta.
-Faça um programa que lê quanto cada apostador investiu, lê o valor do prêmio, e escreve quanto cada um ganharia.
-Exemplo de saída: 
-<< Loteria >>
-Bolão jogador 1 R$: 3
-Bolão jogador 2 R$: 3
-Bolão jogador 3 R$: 4
-Informe o valor do prêmio: 6000.0
-Jogador 1 receberá R$: 1800.0
-Jogador 2 receberá R$: 1800.0
-Jogador 3 receberá R$: 2400.0
+EX 11: 
+Faça um programa que faça operações simples de números complexos:
+Crie e leia dois números complexos z e w, compostos por parte real e parte imaginária.
+Apresente a soma, subtração e produto entre z e w, nessa ordem, bem como o módulo de ambos.
+Obs: faça #include <math.h> e use a função sqrt() para calcular a raiz de um número.
+
+Ex de saida:
+<<Numero complexo>>
+Informe a parte real de z: 2
+Informe a parte imaginária de z:3
+Informe a parte real de w: 5
+Informe a parte imaginária de w:2
+z + w =  7.0 + 5.0i
+z - w = -3.0 + 1.0i
+z * w = 4.0+19i
+|z| = 3.6056
+|w| = 5.3852
 */
