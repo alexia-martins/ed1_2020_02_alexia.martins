@@ -22,7 +22,7 @@ int main() {
     }
     }
 /*
-=> Faça um algoritmo que mostre o funcionamento dos operadores lógicos. Peça para o usuário entrar com dois valores inteiros,, 
+=> Faça um algoritmo que mostre o funcionamento dos operadores lógicos. Peça para o usuário entrar com dois valores inteiros, 
 onde 0 implica em FALSO e qualquer outro número implica em VERDADEIRO.
 Obs: XOR = (p || q) && !(p && q)
 
