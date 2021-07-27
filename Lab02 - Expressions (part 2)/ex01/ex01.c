@@ -1,7 +1,17 @@
 #include <stdio.h>
 
-int main(){
+int main (){
+
+	int provaA, provaB, med;
+
     printf("<< Calculo da Media >>\n");
+    printf("Digite a nota da prova 1: ");
+    scanf ("%d", &provaA);
+    printf("Digite a nota da prova 2: ");
+    scanf ("%d", &provaB);
+        med = ((provaA + provaB)/2);
+        printf("A nota media eh %d", med);
+
 }
 
 /*

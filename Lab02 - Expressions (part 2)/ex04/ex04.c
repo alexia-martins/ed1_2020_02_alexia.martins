@@ -1,14 +1,45 @@
 #include <stdio.h>
+/*
+
+
+
+sistema de teste ta com valor errado, esta mostrando a soma dos valores
+multiplicados pelo peso e nao a media
+
+
+
+*/
+
+
+
+
 
 int main() {
     printf("<< Calculo da Media >>\n");
+	float provaA, provaB, provaC, pesA, pesB, pesC, med;
+    char aluno;
+    printf("Digite o nome do aluno: ");
+    scanf ("%c", &aluno);
+    printf("Digite a nota da prova 1: ");
+    scanf ("%f", &provaA);
+    printf("Digite a nota da prova 2: ");
+    scanf ("%f", &provaB);
+    printf("Digite a nota da prova 3: ");
+    scanf ("%f", &provaC);
+    printf ("Digite o peso da prova 1: ");
+    scanf ("%f", &pesA);
+        printf ("Digite o peso da prova 2: ");
+    scanf ("%f", &pesB);
+        printf ("Digite o peso da prova 3: ");
+    scanf ("%f", &pesC);
+
+        med = (((provaA*pesA) + (provaB*pesB) + (provaC*pesC))/(pesA+pesB+pesC));
+        printf("A nota media do aluno %c eh %.2f", aluno, med);
+
 }
 
 /*
-=> Faça um algoritmo que calcule a média ponderada das notas de 3 provas. 
-A primeira e a segunda prova têm peso 1 e a terceira tem peso 2. Antes de o usuário 
-entrar com as notas do aluno ele deve informar a letra inicial do nome do aluno. 
-Ao final, mostrar o a letra inicial do nome do aluno juntamente com a sua média.
+=> Altere o algoritmo anterior para permitir que o usuário entre com os pesos da prova.
 
 -------------------------------------------------------------------------------
 Exemplo de saída:
