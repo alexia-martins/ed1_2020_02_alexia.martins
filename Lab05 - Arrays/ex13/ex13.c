@@ -2,8 +2,20 @@
 
 int main(){
     printf("<< Zerando negativos >>\n");
-
-    return 0;
+    int numeros [5], i, j=1;
+    for (i=0; i<5; i++) {
+    printf ("Entre com o numero %d: ", j);
+    scanf ("%d", &numeros[i]);
+    j++;
+}
+for (i=0; i<5; i++){
+if (numeros [i]<0) {numeros [i]=0;}
+}
+printf ("Negativo zerados: ");
+for (i=0; i<5; i++){
+printf ("%d ", numeros [i]);
+}
+ return 0;
 }
 
 /*

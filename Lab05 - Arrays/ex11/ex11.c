@@ -2,8 +2,25 @@
 
 int main(){
     printf("<< Pares e Ímpares >>\n");
-
-    return 0;
+int numeros [5], nImpar [5], nPar [5], i, j=1,k;
+for (i=0; i<5; i++) {
+    printf ("Digite o valor %d: ", j);
+    scanf ("%d", &numeros[i]);
+    j++;
+}
+j=0;
+k=0;
+for (i=0; i<5; i++) {
+if (numeros[i]%2==0){ nPar [j] = numeros [i]; j++;}
+else {nImpar [k] = numeros [i]; k++;}
+}
+printf ("Impares:");
+for (i=0; i<k; i++){ printf ("%d, ", nImpar[i]);
+}
+printf ("\nPares:");
+for (i=0; i<j; i++){ printf ("%d, ", nPar[i]);
+}
+return 0;
 }
 
 /*

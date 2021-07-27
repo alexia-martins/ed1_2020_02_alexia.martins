@@ -2,7 +2,24 @@
 
 int main(){
     printf("<< Universidade X >>\n");
+    int alunos [10000], i, j=1, nAlunos;
+    printf ("Quantos alunos serao cadastrados? ");
+    scanf ("%d", &nAlunos);
 
+    for (i=0; i<=nAlunos; i++) {
+    printf ("Entre com o numero %d: ", j);
+    scanf ("%d", &numeros[i]);
+    j++;
+}
+for (i=0; i<5; i++){
+if (numeros [i]<0) {numeros [i]=0;}
+}
+printf ("Negativo zerados: ");
+for (i=0; i<5; i++){
+printf ("%d ", numeros [i]);
+}
+ return 0;
+}
     return 0;
 }
 
