@@ -2,7 +2,18 @@
 
 int main(){
     printf("<< Listando um vetor em ordem inversa !!! >>\n");
-    return 0;
+int numeros [6], i, j=1;
+for (i=0; i<6; i++) {
+    printf ("Entre com o numero %d: ", j);
+    scanf ("%d", &numeros [i]);
+    j++;
+}
+printf ("Ordem inversa dos numeros: ");
+for (i=5; i>=0; i--){
+    printf ("%d ", numeros [i]);
+}
+
+return 0;
 }
 
 /*

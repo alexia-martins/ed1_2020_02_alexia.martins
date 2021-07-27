@@ -2,10 +2,27 @@
 
 int main(){
     printf("<< Five Values >>\n");
-
-    return 0;
+int numeros [5], i, j=1, maior, menor;
+float somador;
+for (i=0; i<5; i++) {
+    printf ("Valor #%d: ", j);
+    scanf ("%d", &numeros [i]);
+    somador = somador + numeros [i];
+    j++;
 }
-
+maior = numeros [0];
+menor = numeros [0];
+for (i=0; i<5; i++){
+if (maior < numeros [i]){ maior = numeros [i];}
+else if (menor > numeros [i]) { menor = numeros [i];}
+}
+printf ("Valores lidos: ");
+for (i=0; i<5; i++){
+    printf ("%d ", numeros [i]);
+}
+printf ("\nMaior valor: %d\nMenor valor: %d\nMedia: %.1f\n", maior, menor, somador/5);
+return 0;
+}
 
 /*
 Fazer um programa para ler 5 valores, e, em seguida, mostrar todos os valores

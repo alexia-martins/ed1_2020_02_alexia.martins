@@ -2,8 +2,18 @@
 
 int main(){
     printf("<< Listando um vetor - com loops >>\n");
+int numeros [6], i, j=1;
+for (i=0; i<6; i++) {
+    printf ("Entre com o numero %d: ", j);
+    scanf ("%d", &numeros [i]);
+    j++;
+}
+printf ("Valores lidos:");
+for (i=0; i<6; i++){
+    printf ("%d ", numeros [i]);
+}
 
-    return 0;
+return 0;
 }
 
 /*

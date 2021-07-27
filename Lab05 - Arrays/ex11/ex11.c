@@ -1,14 +1,6 @@
 #include <stdio.h>
 
 int main(){
-    printf("<< Subtracao de vetores >>\n");
-
-    return 0;
-}
-
-#include <stdio.h>
-
-int main(){
     printf("<< Pares e Ímpares >>\n");
 
     return 0;

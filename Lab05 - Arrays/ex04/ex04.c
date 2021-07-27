@@ -3,9 +3,26 @@
 int main(){
     printf("<< Listando um vetor de numeros pares>>\n");
 
-
-    return 0;
+int numeros [6], i, j=1, ver;
+while (i<6) {
+    printf ("Entre com o numero %d: ", j);
+    scanf ("%d", &ver);
+    if (ver%2==0){
+    numeros [i] = ver;
+    j++;
+    i++;}
+    else {printf ("Valor invalido\n");}
 }
+printf ("Os numeros pares digitados foram: ");
+for (i=0; i<6; i++){
+    printf ("%d ", numeros [i]);
+}
+
+return 0;
+}
+
+
+
 
 /*
 Crie um programa que lê 6 valores inteiros e em seguida mostra na tela os 
