@@ -2,26 +2,24 @@
 
 int main(){
     printf("<< Universidade X >>\n");
-    int alunos [10000], i, j=1, nAlunos;
+    char classe [10000];
+    int mat [10000], i, nAlunos;
+    float CRA [10000];
     printf ("Quantos alunos serao cadastrados? ");
     scanf ("%d", &nAlunos);
 
-    for (i=0; i<=nAlunos; i++) {
-    printf ("Entre com o numero %d: ", j);
-    scanf ("%d", &numeros[i]);
-    j++;
-}
-for (i=0; i<5; i++){
-if (numeros [i]<0) {numeros [i]=0;}
-}
-printf ("Negativo zerados: ");
-for (i=0; i<5; i++){
-printf ("%d ", numeros [i]);
-}
- return 0;
-}
-    return 0;
-}
+    for (i=0; i<nAlunos; i++) {
+    printf ("Entre com o numero do aluno: ");
+    scanf ("%d", &mat[i]);
+    printf ("Entre com a classe social do aluno: ");
+    scanf (" %c", &classe[i]);
+    printf ("Entre com o CRA do aluno: ");
+    scanf ("%f", &CRA[i]);}
+
+printf ("\n==== Alunos Cadastrados ====\n");
+for (i=0; i<nAlunos; i++){
+printf ("Numero: %d Classe Social: %c CRA: %.2f\n", mat [i], classe [i], CRA [i]);
+}}
 
 /*
 Faça um programa que armazene informações sobre os alunos de uma universidade. 

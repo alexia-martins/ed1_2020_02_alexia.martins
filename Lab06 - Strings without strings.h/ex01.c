@@ -1,9 +1,20 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(){
-    printf("<< ASCII table >>\n");
+int main()
+{
+    unsigned char tabela;
+    int cont=0;
 
-    return 0;
+    for (tabela=32; tabela<127; tabela++)
+    {
+    printf (" %d", tabela);
+    printf (" %c \t", tabela);
+    cont++;
+    if (cont==7){printf ("\n");
+    cont=0;
+} else if (tabela==126) { exit (0);}    }
+   
 }
 
 /*
