@@ -2,26 +2,26 @@
 
 int main(){
     printf("<< Valores iguais >>\n");
-int j, i, k, numeros [8], nrepetido[8], cont [8], contador, comparador =0;
+int j, i, k, numeros [8], nrepetido[8], contador, comparador =0;
 for (i=0; i<8; i++) {
     printf ("Entre com o numero %d: ", i+1);
     scanf ("%d", &numeros[i]);}
 
 for (i=0; i<8; i++) {
-    for (j=0; j<8; j++){ contador =0;
-        if (numeros[i]==numeros [j] && i!=j){
+    for (j=0; j<8; j++){contador=0;
+    if (numeros[i]==numeros [j]&&i!=j){
         for (k=0; k<8; k++){
             if (nrepetido[k]==numeros [j]){ contador=1;} }
-            if (contador ==0){
-                nrepetido[comparador]=numeros [i];
+            if (contador ==0 ){
+                nrepetido[comparador]=numeros [i]; 
                 comparador++; }}}}
 
 printf ("Valores repetidos: ");
 for (i=0; i<comparador; i++){
-printf (" %d aparece %d vezes", nrepetido [i], cont [i]);}
+    if (i==comparador-1) {printf (" %d", nrepetido [i]);}
+    else {printf (" %d,", nrepetido [i]);}
 }
-
-
+}
 /*
 
 Faça um programa que leia um vetor de 8 posições e verifique se existem 
