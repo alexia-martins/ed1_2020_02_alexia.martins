@@ -14,7 +14,7 @@ int main(void)
 {
 int i, compara;
 struct endereco ends[3];
-char string [3] = "MG";
+char compEst [3] = "MG";
 
 for (i=0; i<3; i++){
 printf("Rua: \n");
@@ -38,7 +38,7 @@ ends[i].cep[strcspn(ends[i].cep, "\n")] = '\0';
 }
 printf ("Enderecos cadastrados que sao de ""MG"": \n");
 for (i=0; i<=3; i++){
-compara = stricmp (ends [i].estado, string);
+compara = stricmp (ends [i].estado, compEst);
 if (compara == 0)
 {
 printf("%s, %d, %s, %s, %s, %s.\n", ends [i].rua, ends [i].numero, ends [i].comp, ends [i].cidade, ends [i].estado, ends [i].cep);
