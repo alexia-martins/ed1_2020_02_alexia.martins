@@ -334,6 +334,7 @@ printf ("\n Deseja fazer mais alguma operacao? \n\n Digite 1: SIM \n Digite 2: N
 scanf ("%d", &repetir);
 system ("cls");
 }
+return 0;
 }
 
 /*
