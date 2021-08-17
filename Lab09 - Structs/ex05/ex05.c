@@ -7,79 +7,64 @@ float notas [3], media;
 
 int main(){
 struct aluno alunos [3];
-    printf("\t\t<<MENU>>\n");
-int repetir=1, menu, i, j=1, pos, posMedia, posMenor, aux;
+int i, j=1, pos, posMedia, posMenor, aux;
 int presenca [3];
 float maior, menor;
-while (repetir==1) {printf (" \n\tDigite uma opcao:\n\t 1 - Cadastrar 3 alunos.\n\t 2 - Aluno com maior nota na primeira prova.\n\t 3 - Maior media geral.\n\t 4 - Menor media geral.\n\t 5 - Situacao final.\n");
-scanf("%d", &menu);
-switch (menu) {
-    case 1:
-system ("cls");
 for (i=0; i<3; i++) {
-    getchar();
-    printf ("Nome do aluno:\n");
-    fgets (alunos[i].nome, 100, stdin);
-    printf ("Matricula:\n");
+    printf ("Entre com os dados do %d aluno:\n", i+1);
+    printf ("Matricula:");
     scanf ("%d", &alunos[i].matricula);
-    printf ("Numero de faltas:");
-    scanf ("%d", &alunos[i].faltas);
+    getchar();
+    printf ("Nome:");
+    gets (alunos[i].nome);
+    j=1;
    for (aux=0; aux<3; aux++){
    printf ("Entre com %d nota do aluno %d: ", j, i+1);
    scanf ("%f", &alunos[i].notas[aux]);
     j++;
    }
+    printf ("Numero de faltas:");
+    scanf ("%d", &alunos[i].faltas);
 alunos[0].media= ((alunos[0].notas[0]+alunos[0].notas[1]+alunos[0].notas[2])/3);
 alunos[1].media= ((alunos[1].notas[0]+alunos[1].notas[1]+alunos[1].notas[2])/3);
-alunos[2].media= ((alunos[2].notas[0]+alunos[2].notas[1]+alunos[2].notas[2])/3);
-
-
-}
-break;
-    case 2:
+alunos[2].media= ((alunos[2].notas[0]+alunos[2].notas[1]+alunos[2].notas[2])/3);}
 maior = alunos[0].notas[0];
 for (i=0; i<3; i++){
 if (maior < alunos[i].notas [0]){pos = i;}
 }
-printf ("Aluno %s possui a maior nota na primeira prova: %.2f", alunos[pos].nome, alunos [pos].notas[0]);
-break;
-    case 3:
+
+printf ("\nAluno com maior nota na 1 prova foi %s com %.1f pontos.\n", alunos[pos].nome, alunos [pos].notas[0]);
+
 maior = alunos[0].media;
 for (i=0; i<3; i++){
 if (maior < alunos[i].media){posMedia = i;}
 }
-printf ("Aluno %s possui a maior media geral: %.2f", alunos[posMedia].nome, alunos [posMedia].media);
-break;
-    case 4:
+printf ("Aluno com maior media geral foi %s com %.1f pontos\n", alunos[posMedia].nome, alunos [posMedia].media);
+
 menor = alunos[0].media;
 for (i=0; i<3; i++){
 if (menor > alunos[i].media){posMenor = i;}
 }
-printf ("Aluno %s possui a menor media geral: %.2f", alunos[posMenor].nome, alunos [posMenor].media);
-break;
-    case 5:
-    for (i=0;i<3;i++){
-        presenca[i] = (72- (alunos [i].faltas));
-    }
+printf ("Aluno com menor media geral foi %s com %.1f pontos\n", alunos[posMenor].nome, alunos [posMenor].media);
+
+for (i=0;i<3;i++){presenca[i] = (72- (alunos [i].faltas));}
+printf ("\nSituacao dos Alunos:\n\n");
 for (i=0; i<3; i++){
 if (alunos[i].media>=60&& presenca [i] >=54){
-    printf ("Aluno %s foi aprovado com a media: %.2f\n", alunos [i].nome, alunos[i].media);}
+    printf ("%s. Aprovado.\n", alunos [i].nome);}
 
 else if (alunos[i].media >=60&& presenca [i]<54){
-    printf ("Aluno %s foi reprovado por falta com a media: %.2f e com %d faltas.\n", alunos [i].nome, alunos[i].media, alunos[i].faltas);}
+    printf ("%s. Reprovado por falta.\n", alunos [i].nome);}
 
 else if (alunos[i].media<60 && presenca [i]>=54){
-    printf ("Aluno %s foi reprovado por nota com a media: %.2f\n", alunos[i].nome, alunos[i].media);}
+    printf ("%s. Reprovado por nota.\n", alunos[i].nome);}
 
 else {
-    printf ("Aluno %s foi reprovado por nota e por falta com a media: %.2f e com %d faltas\n", alunos [i].nome, alunos[i].media, alunos[i].faltas);}
+    printf ("%s. Reprovado por nota e falta.\n", alunos [i].nome);}
 }
-break;
-}
-}
-printf ("\n Deseja fazer mais alguma operacao? \n\n Digite 1: SIM \n Digite 2: NAO \n");
-scanf ("%d", &repetir);
-system ("cls");
+
+
+
 }
 
 

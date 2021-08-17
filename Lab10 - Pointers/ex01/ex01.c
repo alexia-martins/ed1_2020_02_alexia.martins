@@ -4,21 +4,9 @@ int main(){
     printf("<< Pointers >>\n");
 int val[5] = {2,4,5,8,10}, i;
 int *p = &val[2];
-printf ("Antes da alteracao:\n");
-for (i=0;i<5;i++){
-    if (i==4) {printf ("%d", val[i]);}
-else {printf ("%d, ", val[i]);}
-}
 *p = 6;
-printf ("\nApos alteracao: \n");
-
-p = &val;
-
-for (i=0;i<5;i++){
-    if (i==4) {printf ("%d", *p);}
-else {printf ("%d, ", *p);}
-p++;
-}}
+printf ("Valor 5 alterado: %d\n", *p);
+}
 
 /*
 Crie um programa que contenha a seguinte variável

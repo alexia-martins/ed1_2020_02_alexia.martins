@@ -18,19 +18,13 @@ scanf ("%d", p);
 printf ("Valor de a: %d", a);
     //(c)
  p = &val[4];
-printf ("\n\nc)\nAntes da alteracao:\n");
+printf ("\nc)\nDigite um valor:");
+scanf ("%d", p);
+printf ("\nApos alteracao: \n");
+
 for (i=0;i<5;i++){
     if (i==4) {printf ("%d", val[i]);}
 else {printf ("%d, ", val[i]);}
-}
-printf ("\nDigite um valor:");
-scanf ("%d", p);
-printf ("\nApos alteracao: \n");
-p = &val;
-for (i=0;i<5;i++){
-    if (i==4) {printf ("%d", *p);}
-else {printf ("%d, ", *p);}
-p++;
 }}
 
 /*
