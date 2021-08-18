@@ -4,8 +4,35 @@
 int main(){
     printf("<< Par ou Impar >>\n");
 
-    return 0;
+int *array;
+int *p;
+int i,n, cont1=0, cont2=0;
+
+printf("Quantos inteiros serao lidos: ");
+scanf("%d",&n);
+array = (int *)malloc(n*sizeof(int));
+
+for (i=0;i<n;i++){
+printf ("%dro inteiro:", i+1);
+scanf ("%d", &array[i]);
 }
+array = &array[0];
+
+for (i=0;i<n;i++){
+if ((*array)%2 == 0){cont1++;}
+else {cont2++;}
+array++;
+}
+
+printf ("Sao pares: %d dos %d inteiros lidos.\n", cont1, n);
+printf ("Sao impares: %d dos %d inteiros lidos.", cont2, n);
+
+
+free(array);
+return 0;
+}
+  
+
 
 /*
 3) Faça um programa que leia n inteiros (definidos pelo usuário) 

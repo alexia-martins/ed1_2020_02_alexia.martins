@@ -1,10 +1,35 @@
 #include <stdio.h>
-//lembre-se de incluir as bibliotecas adequadas
+#include <stdlib.h>
+
+typedef struct{
+    int x, y;
+}ponto;
 
 int main(){
+    int i, tam;
     printf("Quantos pontos deseja digitar: ");
+    scanf ("%d", &tam);
+    ponto *pontos = (ponto *)malloc(tam*sizeof(ponto));
 
-    return 0;
+for (i=0;i<tam;i++)
+{
+    printf ("Entre com a coordenada x do ponto %d:", i+1);
+    scanf ("%d", &pontos[i].x);
+    printf ("Entre com a coordenada y do ponto %d:", i+1);
+    scanf ("%d", &pontos[i].y);
+
+}
+
+printf ("Pontos digitados: ");
+for (i=0;i<tam;i++)
+{   
+    if (i==0)
+    printf ("(%d, %d)", pontos[i].x, pontos[i].y);
+    else  printf ("; (%d, %d)", pontos[i].x, pontos[i].y);
+
+}
+free (pontos);
+return 0;
 }
 
 /*

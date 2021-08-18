@@ -1,10 +1,65 @@
 #include <stdio.h>
 //lembre-se de incluir as bibliotecas adequadas
+typedef struct
+{
+    int x, y;
+}ponto;
 
 int main(){
-    printf("<< Vetor de pontos alocados dinamicamente >>");
+    int i, tam, esquerda=0, direita=0, cima=0, baixo=0;
 
-    return 0;
+    printf("<< Vetor de pontos alocados dinamicamente >>\n");
+    printf("Quantos pontos deseja digitar: ");
+    scanf ("%d", &tam);
+ponto *pontos = (ponto *)malloc(tam*sizeof(ponto));
+ponto *pe = (ponto *)malloc(1*sizeof(ponto));
+ponto *pd = (ponto *)malloc(1*sizeof(ponto));
+ponto *pc = (ponto *)malloc(1*sizeof(ponto));
+ponto *pb = (ponto *)malloc(1*sizeof(ponto));
+
+
+for (i=0;i<tam;i++){
+    printf ("Entre com a coordenada x do ponto %d:", i+1);
+    scanf ("%d", &pontos[i].x);
+    printf ("Entre com a coordenada y do ponto %d:", i+1);
+    scanf ("%d", &pontos[i].y);
+
+}
+
+for (i=0;i<tam;i++){
+    if (pontos[esquerda].x>pontos[i].x) esquerda =i;
+    if (pontos[direita].x<pontos[i].x) direita =i;
+    if (pontos[cima].y<pontos[i].y) cima =i;
+    if (pontos[baixo].y>pontos[i].y) baixo =i;
+}
+pe->x = pontos[esquerda].x;
+pe->y = pontos[esquerda].y;
+pd->x = pontos[direita].x;
+pd->y = pontos[direita].y;
+pc->x = pontos[cima].x;
+pc->y = pontos[cima].y;
+pb->x = pontos[baixo].x;
+pb->y = pontos[baixo].y;
+
+printf ("Pontos digitados: ");
+for (i=0;i<tam;i++){   
+    if (i==0)
+    printf ("(%d, %d)", pontos[i].x, pontos[i].y);
+    else  printf ("; (%d, %d)", pontos[i].x, pontos[i].y);
+
+}
+
+printf ("\n");
+
+printf ("Ponto mais a esquerda: (%d,%d)\n", pe->x, pe->y);
+printf ("Ponto mais a direita: (%d,%d)\n", pd->x, pd->y);
+printf ("Ponto mais a cima: (%d,%d)\n", pc->x, pc->y);
+printf ("Ponto mais a baixo: (%d,%d)\n", pb->x, pb->y);
+
+
+free (pontos);
+
+return 0;
 }
 
 /*

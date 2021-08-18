@@ -73,8 +73,10 @@ int main(void){
 Suas considerações:
 
 Quais foram os valores de n testados?
+2, 3 e 5.
 O que significa o valor de n?
-o que significa o valor de de sizeof(double) no 
-commando malloc(n*sizeof(double)).
+É o numero de variáveis do tipo double * que o usuário deseja guardar.
+O que significa o valor de de sizeof(double) no commando malloc(n*sizeof(double))?
+sizeof(double) é o numero de bytes que uma variável do tipo double ocupa na memória. 
 
 */

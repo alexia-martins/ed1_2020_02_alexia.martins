@@ -3,7 +3,22 @@
 
 int main() {
     printf("<< Guarda inteiros >>\n");
-    // Insira o seu código aqui.
+int *array;
+int i;
+array = (int *)malloc(5*sizeof(int));
+
+for (i=0;i<5;i++){
+printf ("Digite o numero(%d):", i+1);
+scanf ("%d", &array[i]);
+}
+printf ("\n");
+array = &array[0];
+for (i=0;i<5;i++){
+printf ("O numero(%d) eh %d\n", i+1, *array);
+array++;
+}
+
+free(array);
 }
 
 /*
