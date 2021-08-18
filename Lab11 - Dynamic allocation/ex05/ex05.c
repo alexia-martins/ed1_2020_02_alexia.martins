@@ -17,7 +17,6 @@ ponto *pd = (ponto *)malloc(1*sizeof(ponto));
 ponto *pc = (ponto *)malloc(1*sizeof(ponto));
 ponto *pb = (ponto *)malloc(1*sizeof(ponto));
 
-
 for (i=0;i<tam;i++){
     printf ("Entre com a coordenada x do ponto %d:", i+1);
     scanf ("%d", &pontos[i].x);
