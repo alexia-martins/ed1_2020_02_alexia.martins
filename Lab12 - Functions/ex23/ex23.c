@@ -25,7 +25,7 @@ Entre com o elemento 2: 20
 Entre com o elemento 3: 10
 Entre com o elemento 4: -30
 
-Vetor: 50, 20, 10, -30
+Vetor: 50, 20, 10, -30 
 Maior: 50   Menor: -30
 Numero de negativos: 1
 Vetor absoluto: 50, 20, 10, 30
@@ -36,7 +36,7 @@ Vetor original: 50, 20, 10, -30
 Vetor copiado: 50, 20, 10, -30
 
 Entre com o valor escalar para multiplicar o vetor original: 10
-
+ 
 Vetor original: 500, 200, 100, -300
 Vetor copiado: 50, 20, 10, -30
 -------------------------------------------------------------------------------

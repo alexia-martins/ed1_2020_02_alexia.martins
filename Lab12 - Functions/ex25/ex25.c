@@ -19,6 +19,6 @@ vet_destino  = copiarvet(vet_origem,  n);
 Exemplo de Saída:
 
 O vetor de origem eh: 1.20, 2.00, 3.20, 4.00, 5.10
-O vetor de destino eh: 1.20, 2.00, 3.20, 4.00, 5.10
+O vetor de destino eh: 1.20, 2.00, 3.20, 4.00, 5.10 
 -------------------------------------------------------------------------------
 */

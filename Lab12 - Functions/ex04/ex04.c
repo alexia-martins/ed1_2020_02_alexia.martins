@@ -1,8 +1,20 @@
 #include <stdio.h>
 
+int calculo (int x, int n){
+int i, res=x;
+for (i=1; i<n; i++){
+res *=x;
+}
+return res;
+}
+
 int main(){
+    int  num1, num2;
     printf("Digite o valor de x: ");
+    scanf ("%d", &num1);
     printf("Digite o valor de n: ");
+    scanf ("%d", &num2);
+    printf ("O valor de %d elevado a %d eh %d:", num1, num2, calculo (num1, num2));
 
     return 0;
 }

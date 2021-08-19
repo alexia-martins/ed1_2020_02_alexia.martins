@@ -15,6 +15,6 @@ No programa principal, solicite ao usuário quantos pontos deseja.
 Exemplo de Saída:
 
 Digite quantos pontos(x,y) você deseja: 2
-(0,0) , (0,0) 
+(0,0) , (0,0)  
 -------------------------------------------------------------------------------
 */

@@ -20,7 +20,7 @@ Exemplo de Saída:
 Digite o tamanho do vetor: 4
 Digite o valor 1: 1
 Digite o valor 2: 3
-Digite o valor 3: 5
+Digite o valor 3: 5 
 Digite o valor 4: 4
 
 O vetor de origem eh: 1, 3, 5, 4

@@ -1,31 +1,29 @@
 #include <stdio.h>
 
-int main(){
-    printf("Digite o valor de y: ");
-    printf("Digite o percentual de alteração x: ");
+void alterar (float *y, float percente){
+float soma;
 
-    return 0;
+if (*y>0) soma = *y+(*y*percente);
+else soma = *y-((-(*y))*percente);
+*y = soma;
+}
+
+int main(){
+    float y;
+    float *p= &y;
+    float percente;
+    printf("Digite o valor de y: ");
+    scanf ("%f", p);
+    printf("Digite o percentual de alteracao x: ");
+    scanf ("%f", &percente);
+    alterar (p, percente);
+    printf ("O valor alterado eh: %.f", *p);
 }
 
 /*
-=> Faça uma função que altere um valor de um número real em x%. 
-Se o valor de x for negativo ele deve ser decrementado, se for
-positivo aumente. O valor da variável deve ser passada por parâmetro,
-ou seja, o retorno deve  ser void.
+Crie um procedimento idêntico ao exercício anterior, mas que mude o valor da
+variável passada por parâmetro (ou seja, o retorno deve ser void)
 
-
--------------------------------------------------------------------------------
-Exemplo de Saída 1:
-
-Digite o valor de y: 100
-Digite o percentual de alteracao: 0.10 // 0.10 equivale a 10%
-O valor alterado eh: 110
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
-Exemplo de Saída 2:
-
-Digite o valor de y: -100
-Digite o percentual de alteração: .10
-O valor alterado eh: -110
--------------------------------------------------------------------------------
+Para os próximos exercícios crie uma struct chamada ponto, que armazena dois
+números reais que representam coordenadas cartesianas.
 */

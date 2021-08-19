@@ -1,11 +1,33 @@
 #include <stdio.h>
 
-int main(){
-    printf("Digite o ponto: ");
-    printf("Digite a constante: ");
+typedef struct ponto {
+int x, y;
+}ponto;
 
-    return 0;
+void ImprimePonto (ponto pontos1, int cons, ponto pontos2){
+printf ("Resultado: (%d, %d) * %d = (%d, %d)", pontos1.x, pontos1.y, cons, pontos2.x, pontos2.y);
 }
+void multi (ponto cord1, int cons, ponto *p){
+p->x = cord1.x*cons;
+p->y = cord1.y*cons;
+}
+
+
+int main(){
+    ponto p1, p2;
+    ponto *p = &p2;
+    int cons;
+    printf("Digite o ponto: ");
+    scanf ("%d, %d", &p1.x, &p1.y);
+    printf ("Digite a constante: ");
+    scanf ("%d", &cons);
+    multi (p1, cons, p);
+    ImprimePonto (p1, cons, p2);
+  
+    return 0;
+
+}
+
 
 /*
 => Faça um procedimento que multiplique o valor de um ponto 

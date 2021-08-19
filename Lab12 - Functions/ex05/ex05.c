@@ -1,9 +1,19 @@
 #include <stdio.h>
+#include <math.h>
+
+int quadrado (int n){
+    int numero;
+    int quad;
+    quad = sqrt(n);
+    if (n%quad==0) return 0;
+    else return 1;
+}
 
 int main(){
+    float numero;
     printf("Digite o valor de n: ");
-
-    return 0;
+    scanf ("%f", &numero);
+    printf ("%d", quadrado (numero));
 }
 
 /*

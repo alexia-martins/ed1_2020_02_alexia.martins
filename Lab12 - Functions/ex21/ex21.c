@@ -21,7 +21,7 @@ a serem computados e o valor do escalar.
 
 -------------------------------------------------------------------------------
 Exemplo de Saída:
-
+ 
 Digite o tamanho do vetor: 5
 Digite o valor 1: 2
 Digite o valor 2: 4

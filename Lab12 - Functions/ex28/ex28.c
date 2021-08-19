@@ -19,7 +19,7 @@ Explique porque a função não funciona. Faça o mapa de memória
 solução para uma função deste tipo?
 
 -------------------------------------------------------------------------------
-Observação:
+Observação: 
 
 Utilize o excel para fazer o mapa de memória (Modelo disponível nos
 arquivos do Teams).

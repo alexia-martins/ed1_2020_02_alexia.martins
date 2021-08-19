@@ -1,9 +1,33 @@
 #include <stdio.h>
 
-int main(){
-    printf("<<  >>\n");
+typedef struct ponto {
+float x, y;
+}ponto;
 
+void ImprimePonto (ponto pontos1, ponto pontos2, float area){
+printf ("A area do retangulo definido por (%.2f, %.2f) e (%.2f, %.2f) eh (%.2f)", pontos1.x, pontos1.y, pontos2.x, pontos2.y, area);
+}
+float CalculaArea (ponto cord1, ponto cord2, float *p){
+*p = ((cord1.x-cord2.x)*-(cord1.y-cord2.y));
+return *p;
+}
+int main(){
+    ponto p1, p2;
+    float soma;
+    float *p = &soma;
+    printf("Digite o valor de x: ");
+    scanf ("%f", &p1.x);
+    printf("Digite o valor de y: ");
+    scanf ("%f", &p1.y);
+    printf("Digite o valor de x2: ");
+    scanf ("%f", &p2.x);
+    printf("Digite o valor de y2: ");
+    scanf ("%f", &p2.y);
+    
+    ImprimePonto (p1, p2, CalculaArea (p1, p2, p));
+  
     return 0;
+
 }
 
 /*

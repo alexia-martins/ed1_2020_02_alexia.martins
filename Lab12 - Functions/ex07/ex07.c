@@ -1,10 +1,23 @@
 #include <stdio.h>
 
-int main(){
-    printf("Digite o número A: ");
-    printf("Digite o número B: ");
+void troca (int *A, int *B){
+int aux;
+aux = *A;
+*A = *B;
+*B = aux;
+}
 
-    return 0;
+int main(){
+    int a, b;
+    int *pa = &a;
+    int *pb = &b;
+
+    printf("Digite o numero A: ");
+    scanf ("%d", pa);
+    printf("Digite o numero B: ");
+    scanf ("%d", pb);
+    troca(pa, pb);
+    printf ("O numero A eh: %d\nO numero B eh: %d", *pa, *pb);
 }
 
 /*

@@ -1,14 +1,48 @@
 #include <stdio.h>
 
+void imprime_vet_int (int *p2){
+for (int i=0; i<5; i++){
+printf ("%d ", *p2);
+p2++;
+}
+}
+
+void imprime_vet_double (double *p2){
+for (int i=0; i<5; i++){
+printf ("%.4lf ", *p2);
+p2++;
+}
+}
+
+void imprime_vet_float (float *p3){
+for (int i=0; i<5; i++){
+printf ("%.2f ", *p3);
+p3++;
+}
+}
+
 int main(){
-    printf("Os valores inseridos neste vetor de inteiros eh: ");
-    //imprime_vet_int(vetori,n);
+    int vet1 [5] = {1, 2, 3, 4, 5}; 
+    int *p1;
+    p1 = vet1;
 
-    printf("Os valores inseridos neste vetor de float eh: ");
-    //imprime_vet_float(vetorf,n);
+    double vet2[5] = {2.222, 1.11, 9.99, 10.231, 3.0114};
+    double *p2;
+    p2 = vet2;
 
-    printf("Os valores inseridos neste vetor de double eh: ");
-    //imprime_vet_double(vetord,n);
+    float vet3[5] = {2.1, 1.0, 9.9, 10.3, 3.1};
+    float *p3;
+    p3 = vet3;
+
+    printf("\nOs valores inseridos neste vetor de inteiros eh: ");
+    imprime_vet_int (p1);
+
+    printf("\nOs valores inseridos neste vetor de float eh: ");
+    imprime_vet_float (p3);
+
+    printf("\nOs valores inseridos neste vetor de double eh: ");
+    imprime_vet_double (p2);
+
 
     return 0;
 }

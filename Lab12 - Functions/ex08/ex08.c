@@ -1,9 +1,20 @@
 #include <stdio.h>
 
-int main(){
-    printf("Digite o valor de y: ");
-    printf("Digite o percentual de alteração x: ");
+float alterar (float y, float percente){
+float soma;
 
+if (y>0) soma = y+(y*percente);
+else soma = y-(-y*percente);
+return soma;
+}
+int main(){
+    float y;
+    float percente;
+    printf("Digite o valor de y: ");
+    scanf ("%f", &y);
+    printf("Digite o percentual de alteracao x: ");
+    scanf ("%f", &percente);
+    printf ("O valor alterado eh: %.f", alterar (y, percente));
     return 0;
 }
 

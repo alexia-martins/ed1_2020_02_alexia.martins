@@ -23,7 +23,7 @@ Digite o tamanho do vetor: 3
 Digite o valor 1: 1
 Digite o valor 2: -1
 Digite o valor 3: 2
-
+ 
 O vetor de origem eh: 1, -1, 2
 O vetor com valores absolutos eh: 1, 1, 2
 -------------------------------------------------------------------------------

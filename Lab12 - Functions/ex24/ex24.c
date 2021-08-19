@@ -35,6 +35,6 @@ lembre-se de imprimir o vetor alocado.
 Exemplo de Saída:
 
 Digite o tamanho do vetor: 8
-O vetor eh: 0, 0, 0, 0, 0, 0, 0, 0
+O vetor eh: 0, 0, 0, 0, 0, 0, 0, 0 
 -------------------------------------------------------------------------------
 */

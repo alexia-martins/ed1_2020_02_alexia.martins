@@ -3,19 +3,19 @@
 #include <stdlib.h>
 int main(){
 int i, j, termo=0;
-long double fatorial;
-double soma = 1.0;
+ double fatorial;
+ double soma = 1.0;
 printf ("<< Numero neperiano >>\n");
 printf ("Entre com o numero de termos: ");
 scanf ("%d", &termo);
     for(i=1; i<=termo ;i++){
         fatorial = 1;
        for (j= 1; j<=i; j++){
-           fatorial = fatorial*i;
+           fatorial *=j;
        }
-       soma = soma + (1.0/fatorial);
+       soma = soma + (1/fatorial);
 }
-printf ("e ~ %lf", soma);
+printf ("e ~ %.14lf", soma);
 return 0;
 }
 /*
@@ -26,4 +26,6 @@ próxima do valor e)
 Exemplo de saída:
 << Número neperiano >>
 Entre com o número de termos: 100
-e ~ 2.71828182845905*/
+e ~ 2.71828182845905*
+
+*/
