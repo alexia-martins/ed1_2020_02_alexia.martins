@@ -1,9 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+typedef struct ponto {
+int p1, p2;
+}ponto;
 
+typedef struct circulo {
+ponto p;
+int raio;
+}circulo;
 int main(){
-
+float area, distancia;
    // Ex04: Um círculo pode ser definido com duas informações
    // - um ponto central; que é sua coordenada x,y no espaço cartesiano
    // - um raio; que é a distância da borda ao centro
@@ -19,7 +26,17 @@ int main(){
    // distancia d = sqtr(x*x + y*y)
    
    // Exemplo de saída: Circulo: Centro (3,5); Raio 2; Área: 12.56; Distancia: 5.0
+circulo c;
+printf ("Digite o ponto x do ponto central: ");
+scanf ("%d", &c.p.p1);
+printf ("Digite o ponto y do ponto central: ");
+scanf ("%d", &c.p.p2);
+printf ("Digite o raio: ");
+scanf ("%d", &c.raio);
+area = 3.14*(c.raio*c.raio);
+distancia = sqrt ((c.p.p1*c.p.p1)+(c.p.p2*c.p.p2));
+printf ("Circulo: (%d, %d); Raio: %d; Area: %.2f; Distancia: %.1f", c.p.p1, c.p.p2, c.raio, area, distancia);
 
-
+/* PROFESSOR O VALOR DO SEU EXEMPLO DE DISTANCIA TA ERRADO, O CERTO É 5,8 MESMO*/
     return 0;
 }

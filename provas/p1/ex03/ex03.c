@@ -28,18 +28,52 @@
 
 */
 
+int calculaVenda (float valorCompra, float valorVenda, float *porcentagem){
+    
+    if(valorCompra <= 0 || valorVenda <= 0){return -1;}
+    
+    *porcentagem = ((valorVenda/valorCompra)-1)*100;
+    
+    if(*porcentagem <= 0)        return 1;
+    
+    else if(*porcentagem > 0 && *porcentagem <= 20 )      return 2;
+    
+    else if(*porcentagem > 20 && *porcentagem <= 40)      return 3;
+
+    else if(*porcentagem > 40)   return 4;   
+}
 int main(){
 
    // Ex03: utilizando a função de cálculo de lucro, leia o preço de compra e venda
    // e mostre o percentual de lucro ou prejuízo e a classificação de acordo com
    // a tabela acima. 
-   printf("Digite o preco de compra:");
-
-   printf("Digite o preco de venda:");
-   
    // exemplo de saída:
    // Preço de compra: 10; Preco de venda:11; Lucro Pequeno de 10%
    // Preço de compra: 10; Preco de venda: 9; Prejuízo de 10%
-  
-    return 0;
+    float percentual;
+    float valorCompra, valorVenda;
+    int retorno;
+
+    printf("Digite o preco de compra:");
+    scanf("%f", &valorCompra);
+    printf("Digite o preco de venda:");
+    scanf("%f", &valorVenda);
+
+    retorno = calculaVenda(valorCompra, valorVenda, &percentual);
+
+    switch(retorno){
+        case -1:  printf("Valores Invalidos\n"); break;
+        case 1:
+            printf("Preco de compra: %.f; Preco de venda: %.f; Prejuizo de %.1f%%\n", valorCompra, valorVenda, percentual);
+            break;
+        case 2:
+            printf("Preco de compra: %.f; Preco de venda: %.f; Lucro pequeno de %.1f%%\n", valorCompra, valorVenda, percentual);
+            break;
+        case 3:
+            printf("Preco de compra: %.f; Preco de venda: %.f; Lucro bom de %.1f%%\n", valorCompra, valorVenda, percentual);
+            break;  
+        case 4:
+            printf("Preco de compra: %.f; Preco de venda: %.f; Lucro otimo de %.1f%%\n", valorCompra, valorVenda, percentual);
+            break;
+    }
 }
