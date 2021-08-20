@@ -28,19 +28,19 @@
 
 */
 
-int calculaVenda (float valorCompra, float valorVenda, float *porcentagem){
+int calculaVenda (float Compra, float Venda, float *p){
     
-    if(valorCompra <= 0 || valorVenda <= 0){return -1;}
+    if(Compra <= 0 || Venda <= 0){return -1;}
     
-    *porcentagem = ((valorVenda/valorCompra)-1)*100;
+    *p = ((Venda/Compra)-1)*100;
     
-    if(*porcentagem <= 0)        return 1;
+    if(*p <= 0)        return 1;
     
-    else if(*porcentagem > 0 && *porcentagem <= 20 )      return 2;
+    else if(*p > 0 && *p <= 20 )      return 2;
     
-    else if(*porcentagem > 20 && *porcentagem <= 40)      return 3;
+    else if(*p > 20 && *p <= 40)      return 3;
 
-    else if(*porcentagem > 40)   return 4;   
+    else if(*p > 40)   return 4;   
 }
 int main(){
 
@@ -50,30 +50,31 @@ int main(){
    // exemplo de saída:
    // Preço de compra: 10; Preco de venda:11; Lucro Pequeno de 10%
    // Preço de compra: 10; Preco de venda: 9; Prejuízo de 10%
-    float percentual;
-    float valorCompra, valorVenda;
-    int retorno;
+    float r;
+    float *p= &r;
+    float Compra, Venda;
+    int resultado;
 
     printf("Digite o preco de compra:");
-    scanf("%f", &valorCompra);
+    scanf("%f", &Compra);
     printf("Digite o preco de venda:");
-    scanf("%f", &valorVenda);
+    scanf("%f", &Venda);
 
-    retorno = calculaVenda(valorCompra, valorVenda, &percentual);
+    resultado = calculaVenda(Compra, Venda, p);
 
-    switch(retorno){
+    switch(resultado){
         case -1:  printf("Valores Invalidos\n"); break;
         case 1:
-            printf("Preco de compra: %.f; Preco de venda: %.f; Prejuizo de %.1f%%\n", valorCompra, valorVenda, percentual);
+            printf("\nPreco de compra: %.f;\nPreco de venda: %.f;\nPrejuizo de %.1f%%\n", Compra, Venda, *p);
             break;
         case 2:
-            printf("Preco de compra: %.f; Preco de venda: %.f; Lucro pequeno de %.1f%%\n", valorCompra, valorVenda, percentual);
+            printf("\nPreco de compra: %.f;\nPreco de venda: %.f;\nLucro pequeno de %.1f%%\n", Compra, Venda, *p);
             break;
         case 3:
-            printf("Preco de compra: %.f; Preco de venda: %.f; Lucro bom de %.1f%%\n", valorCompra, valorVenda, percentual);
+            printf("\nPreco de compra: %.f;\nPreco de venda: %.f;\nLucro bom de %.1f%%\n", Compra, Venda, *p);
             break;  
         case 4:
-            printf("Preco de compra: %.f; Preco de venda: %.f; Lucro otimo de %.1f%%\n", valorCompra, valorVenda, percentual);
+            printf("\nPreco de compra: %.f;\nPreco de venda: %.f;\nLucro otimo de %.1f%%\n", Compra, Venda, *p);
             break;
     }
 }
