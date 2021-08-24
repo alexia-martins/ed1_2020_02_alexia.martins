@@ -9,6 +9,7 @@ typedef struct circulo {
 ponto p;
 int raio;
 }circulo;
+
 int main(){
 float area, distancia;
    // Ex04: Um círculo pode ser definido com duas informações

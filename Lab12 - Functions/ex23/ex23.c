@@ -1,9 +1,73 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+void imprime_vet_int (int *p, int tam){
+for (int i=0; i<tam; i++){
+    if (i==(tam-1)) printf ("%d ", p[i]);
+    else printf ("%d , ", p[i]);
+}
+}
+void multiplicar (int *p, int tam, int indice){
+
+for (int i=0; i<tam; i++){
+*p *=indice;
+p++;
+}
+}
+void absoluto (int *p, int tam){
+
+for (int i=0; i<tam; i++){
+*p = abs (*p);
+p++;
+}
+}
+
+void troca (int *p1, int *p2, int tam){
+for (int i=0; i<tam; i++){
+*p1 = *p2;
+p1++;
+p2++;
+}}
+
+int menor (int *p, int tam){
+int aux = *p;
+for (int i=0; i<tam; i++){
+    if (aux > *p) {aux = *p; p++;}
+    else {p++;}
+}
+return aux;
+}
+
+int maior (int *p, int tam){
+int aux = *p;
+for (int i=0; i<tam; i++){
+    if (aux < *p) {aux = *p; p++;}
+    else {p++;}
+}
+return aux;
+}
 
 int main(){
-    printf("<<  >>\n");
 
-    return 0;
+    int *vetor;
+    int *point = &vetor;
+    int tam, i;
+
+    printf("Digite o tamanho do vetor: ");
+    scanf ("%d", &tam);
+    vetor = (int *)malloc(tam*sizeof(int));
+
+    for (i=0; i<tam; i++){
+    printf ("Digite o valor de %d: ", i+1);
+    scanf ("%d", &vetor[i]);
+    }
+printf ("O vetor de origem eh: ");
+imprime_vet_int (vetor, tam);
+absoluto (point, tam);
+printf ("\nO vetor com valores absolutos eh: ");
+imprime_vet_int (vetor, tam);
+
+free (vetor);
 }
 
 /*

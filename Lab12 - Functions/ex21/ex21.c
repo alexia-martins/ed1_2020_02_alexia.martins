@@ -1,10 +1,43 @@
 #include <stdio.h>
+#include <stdlib.h>
+
+void imprime_vet_int (int *p, int tam){
+for (int i=0; i<tam; i++){
+    if (i==(tam-1)) printf ("%d ", p[i]);
+    else printf ("%d , ", p[i]);
+}
+}
+
+void multiplicar (int *p, int tam, int indice){
+
+for (int i=0; i<tam; i++){
+*p *=indice;
+p++;
+}
+}
 
 int main(){
-    printf("Digite o tamanho do vetor: ");
-    printf("Digite o valor do escalar: ");
 
-    return 0;
+    int *vetor;
+    int tam, mult, i;
+
+    printf("Digite o tamanho do vetor: ");
+    scanf ("%d", &tam);
+    vetor = (int *)malloc(tam*sizeof(int));
+
+    for (i=0; i<tam; i++){
+    printf ("Digite o valor de %d: ", i+1);
+    scanf ("%d", &vetor[i]);
+    }
+    printf("Digite o valor do escalar: ");
+    scanf ("%d", &mult);
+printf ("O vetor de origem eh: ");
+imprime_vet_int (vetor, tam);
+multiplicar (vetor, tam, mult);
+printf ("\nO vetor final eh: ");
+imprime_vet_int (vetor, tam);
+
+free (vetor);
 }
 
 /*
