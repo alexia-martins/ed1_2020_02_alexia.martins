@@ -5,12 +5,11 @@
 int main()
 {
     partida p;
+    strcpy (p.clubeA, "Flamengo");
+    strcpy (p.clubeB, "Sao Paulo");
+    p.serie = 'A';
+    p.tempo = 90;
 
-strcpy (p.clubeA, "Flamengo");
-strcpy (p.clubeB, "Sao Paulo");
-p.serie = 'A';
-p.tempo = 90;
-
-        iniciar_jogo (&p);
+    iniciar_jogo (&p);
 
 }
