@@ -15,4 +15,6 @@ int iniciar_jogo (partida *p){
         
         return 0;
     } else return -1;
+
     }
+}

@@ -6,4 +6,4 @@ typedef struct partida {
 
 }partida;
 
-void iniciar_jogo (partida *p);
+int iniciar_jogo (partida *p);
