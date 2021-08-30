@@ -4,8 +4,8 @@
 
 int main()
 {
-    partida p;
-
+    partida *p;
+MALLOC
 strcpy (p.clubeA, "Flamengo");
 strcpy (p.clubeB, "Sao Paulo");
 p.serie = 'A';
