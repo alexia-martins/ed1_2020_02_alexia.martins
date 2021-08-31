@@ -8,4 +8,4 @@ typedef struct partida {
 
 partida* criar_campeonato (char *c1, char *c2, char serie, int tempo);
 int excluir_campeonato (partida *p);
-void imprime_jogos(partida *p);
+void imprime_jogos (partida *p);

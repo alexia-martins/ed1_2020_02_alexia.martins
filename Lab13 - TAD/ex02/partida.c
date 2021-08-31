@@ -19,9 +19,7 @@ partida* criar_campeonato (char *c1, char *c2, char s, int tempo){
     else {
     strcpy(p->clubeA,c1);
     strcpy(p->clubeB,c2);
-    getchar ();
     p->serie = s;
-    getchar ();
     p->tempo = tempo;
     return p;
     }};
@@ -31,7 +29,7 @@ else {free (p);
 return 0;
 }};
 
-void imprime_jogos(partida *p){
-    printf("\nClube 1: %s\nClube 2: %s\nSerie: %c\nTempo de jogo (min): %d\n", p->clubeA, p->clubeB, p->serie, p->tempo);
+void imprime_jogos (partida *p){
+    printf("\nClube 1: %sClube 2: %sSerie: %c\nTempo de jogo (min): %d\n", p->clubeA, p->clubeB, p->serie, p->tempo);
 };
 

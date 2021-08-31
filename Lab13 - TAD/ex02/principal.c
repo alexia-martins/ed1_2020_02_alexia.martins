@@ -14,7 +14,7 @@ int main()
   scanf(" %c", &s);
   printf ("Informe o tempo da partida: ");
   scanf ("%d", &temp);
-    
+  getchar();
     partida *p;
     p = (malloc(1*sizeof(partida)));
     p = criar_campeonato (c1, c2, s, temp);
