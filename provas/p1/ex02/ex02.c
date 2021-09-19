@@ -16,6 +16,11 @@ char estado [10];
 int ano;
 }livro;
 
+// check:<<<erro: e2.3: Declaração da função com erros de entrada (no tipo, ou falta parâmetros)>>>>
+// check:<<<erro: e2.5a: Inicialização errada (deveria ser o maior valor possível) ou o ano do primeiro livro mais antigo>>>>
+// check:<<<erro: e2.6aa: Na busca está ocorrendo somente a comparação o menor/maior e este não está sendo atualizado>>>>
+// check:<<<erro: e2.7: se todos os livros são novos o programa vai retornar errado>>>>
+
 int buscar (livro *p) {
 int i, j, pos, ano;
 livro aux;
@@ -64,7 +69,7 @@ int main(){
       printf ("Estado: %s\n", livros[i].estado);
        printf ("Ano: %d\n\n", livros[i].ano);
     }
-    posi = buscar (livros);
+    posi = buscar (livros);// check:<<<erro: e2.1b: Não passou o tamanho do vetor para a função>>>>
     printf("Livro usado mais antigo: \n");
     printf ("Nome: %s\n", livros[posi].nome);
     printf ("Preco: %.2f\n", livros[posi].preco);

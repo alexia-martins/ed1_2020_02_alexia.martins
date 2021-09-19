@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 typedef struct ponto {
-int p1, p2;
+int p1, p2;// check:<<<erro: use valores reais>>>>
 }ponto;
 
 typedef struct circulo {
@@ -39,5 +39,6 @@ distancia = sqrt ((c.p.p1*c.p.p1)+(c.p.p2*c.p.p2));
 printf ("Circulo: (%d, %d); Raio: %d; Area: %.2f; Distancia: %.1f", c.p.p1, c.p.p2, c.raio, area, distancia);
 
 /* PROFESSOR O VALOR DO SEU EXEMPLO DE DISTANCIA TA ERRADO, O CERTO É 5,8 MESMO*/
+// check:<<<comentário: obrigado!, na verdade errei o centro, que era para ser (3,4) e não (3,5)>>>>
     return 0;
 }

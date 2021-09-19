@@ -41,6 +41,7 @@ int calculaVenda (float Compra, float Venda, float *p){
     else if(*p > 20 && *p <= 40)      return 3;
 
     else if(*p > 40)   return 4;   
+    // check:<<<comentário: e3.4: o último teste é desnecessário E/OU alguns testes no IF são desnecessários>>>>
 }
 int main(){
 
@@ -59,7 +60,6 @@ int main(){
     scanf("%f", &Compra);
     printf("Digite o preco de venda:");
     scanf("%f", &Venda);
-
     resultado = calculaVenda(Compra, Venda, p);
 
     switch(resultado){

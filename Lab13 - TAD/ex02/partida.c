@@ -24,7 +24,7 @@ partida* criar_campeonato (int v){
         getchar();
         fgets (p->clubeB,100, stdin);
         getchar();
-        scanf ("%c", p->serie);
+        scanf ("%c", p[i].serie);
         getchar();
         scanf ("%d", p->tempo);
         }

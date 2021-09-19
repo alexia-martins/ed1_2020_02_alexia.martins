@@ -7,7 +7,7 @@ int main()
     partida *p;
     printf ("Quantas partidas deseja criar para o campeonato?\n");
     scanf ("%d", &v);
-    criar_campeonato (v);
+    p = criar_campeonato (v);
     
 
 /*
