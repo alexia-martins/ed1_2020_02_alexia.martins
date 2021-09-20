@@ -82,7 +82,11 @@ int imprime_lista(Lista *li)
     return 0;
 }
 
-void libera_lista(Lista *li)
+int libera_lista(Lista *li)
 {
-    free(li);
+    if (li!=NULL) {
+        free(li);
+    return 0;
+    }
+    else return -1;
 }
