@@ -41,6 +41,14 @@ int consulta_lista_pos(Lista *li, int pos, struct aluno *al)
     return 0;
 }
 
+int consulta_lista_mat(Lista *li, int mat, struct aluno *al)
+{
+    if (li == NULL || pos <=0 || pos > li->qtd)
+        return -1;
+    else *al = li->dados[pos-1];
+    return 0;
+}
+
 int insere_lista_inicio(Lista *li, struct aluno al)
 {
     if (li == NULL)
@@ -56,6 +64,8 @@ int insere_lista_inicio(Lista *li, struct aluno al)
     li->dados[0] = al;
     li->qtd++;
     return 0;
+}
+int insere_lista_ordenada(Lista* li, struct aluno al){
 }
 
 int imprime_lista(Lista *li)
@@ -90,3 +100,46 @@ int libera_lista(Lista *li)
     }
     else return -1;
 }
+
+int remove_lista(Lista* li, int mat){
+    if (li == NULL)
+        return -1;
+    else {
+        for (int i= 0; i<li->qtd; i++){
+        if (li->dados[i].matricula == mat) {
+        for (int j= i; j<li->qtd; j++){
+        li->dados [j] = li->dados [j+1];
+        }
+            li->qtd --;
+        }
+        else return -1;    
+        }
+    return 0;
+    }
+}
+int remove_lista_inicio(Lista* li){
+  if (li == NULL)
+        return -1;
+    // deslocando os elementos
+    for (int i = 0; i >= 0; i++)
+    {
+        li->dados[i + 1] = li->dados[i];
+    }
+    // primeira posição disponivel
+    li->dados[0] = al;
+    li->qtd++;
+    return 0;
+}
+int remove_lista_final(Lista* li){
+}
+int tamanho_lista(Lista* li){
+}
+int lista_cheia(Lista* li){
+}
+int lista_vazia(Lista* li){
+}
+int imprime_lista(Lista* li){
+}
+int remove_lista_otimizado(Lista* li, int mat){
+}
+
