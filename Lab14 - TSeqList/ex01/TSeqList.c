@@ -121,24 +121,30 @@ int remove_lista_inicio(Lista* li){
   if (li == NULL)
         return -1;
     // deslocando os elementos
-    for (int i = 0; i >= 0; i++)
+    for (int i = 0; i < li->qtd; i++)
     {
-        li->dados[i + 1] = li->dados[i];
+        li->dados[i] = li->dados[i+1];
     }
-    // primeira posição disponivel
-    li->dados[0] = al;
-    li->qtd++;
-    return 0;
+    li->qtd--;
 }
 int remove_lista_final(Lista* li){
+      if (li == NULL)
+        return -1;
+li->qtd --;
 }
 int tamanho_lista(Lista* li){
+    if (li == NULL) return -1; //para erro
+    return li->qtd; //retorna tamanho
 }
 int lista_cheia(Lista* li){
+    if (li== NULL) return -1; //para erro
+    else if (li->qtd == MAX) return 0; //para verdadeiro
+    else return 1; // para falso
 }
 int lista_vazia(Lista* li){
-}
-int imprime_lista(Lista* li){
+    if (li== NULL) return -1; // para erros
+    else if (li->qtd == 0) return 0; // para verdadeiro
+    else return 1; //1 para // para falso
 }
 int remove_lista_otimizado(Lista* li, int mat){
 }
