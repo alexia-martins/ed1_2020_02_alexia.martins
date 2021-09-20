@@ -12,11 +12,12 @@
 // Retorno:
 //    0 - sucesso
 //    -1 - erro
-partida* criar_campeonato (int v){
+partida* criar_campeonato (char *c1, char *c2, char s, int tempo){
     partida *p;
-    p = ((partida *)malloc(v*sizeof(partida)));
+    p = (malloc(1*sizeof(partida)));
     if (p== NULL) return NULL;
     else {
+<<<<<<< HEAD
         for (int i=0; i<v; i++){
         printf("\nInforme o clube 1, clube 2, a serie e o tempo da %d partida:\n", i+1);
         getchar();
@@ -28,16 +29,21 @@ partida* criar_campeonato (int v){
         getchar();
         scanf ("%d", p->tempo);
         }
+=======
+    strcpy(p->clubeA,c1);
+    strcpy(p->clubeB,c2);
+    p->serie = s;
+    p->tempo = tempo;
+>>>>>>> 344d253c886c902dfa89d175fd8c246a2d01dcb4
     return p;
-    }}
-
+    }};
 int excluir_campeonato (partida *p) {
 if (p== NULL) {return -1;}
 else {free (p);
 return 0;
-}}
+}};
 
-void imprime_jogos(partida *p){
-    printf("\nClube 1: %s\nClube 2: %s\nSerie: %c\nTempo de jogo (min): %d\n", p->clubeA, p->clubeB, p->serie, p->tempo);
-}
+void imprime_jogos (partida *p){
+    printf("\nClube 1: %sClube 2: %sSerie: %c\nTempo de jogo (min): %d\n", p->clubeA, p->clubeB, p->serie, p->tempo);
+};
 
