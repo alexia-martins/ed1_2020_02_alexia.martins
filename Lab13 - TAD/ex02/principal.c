@@ -20,4 +20,5 @@ int main()
     p = criar_campeonato (c1, c2, s, temp);
     imprime_jogos (p);
     excluir_campeonato (p);
+
 }
