@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "TSeqList.h" //inclui os Protótipos
+#include "TVarSeqList.h" //inclui os Protótipos
 
 //Definição do tipo lista
-struct lista
+typedef struct lista
 {
     int qtd;
-    struct aluno dados[MAX];
-};
+    aluno dados[MAX];
+}lista;
 
-Lista *cria_lista()
+Lista *cria_lista(int tam)
 {
-    Lista *li;
-    li = (Lista *)malloc(sizeof(struct lista));
+    lista *li;
+    li = (lista *)malloc(sizeof(lista));
     if (li != NULL)
     {
         li->qtd = 0;
