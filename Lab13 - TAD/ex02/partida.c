@@ -17,7 +17,6 @@ partida* criar_campeonato (char *c1, char *c2, char s, int tempo){
     p = (malloc(1*sizeof(partida)));
     if (p== NULL) return NULL;
     else {
-<<<<<<< HEAD
         for (int i=0; i<v; i++){
         printf("\nInforme o clube 1, clube 2, a serie e o tempo da %d partida:\n", i+1);
         getchar();
@@ -29,12 +28,6 @@ partida* criar_campeonato (char *c1, char *c2, char s, int tempo){
         getchar();
         scanf ("%d", p->tempo);
         }
-=======
-    strcpy(p->clubeA,c1);
-    strcpy(p->clubeB,c2);
-    p->serie = s;
-    p->tempo = tempo;
->>>>>>> 344d253c886c902dfa89d175fd8c246a2d01dcb4
     return p;
     }};
 int excluir_campeonato (partida *p) {

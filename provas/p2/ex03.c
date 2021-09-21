@@ -32,3 +32,22 @@ mat2d_increase_size(mat,3,3)
  };
 
 */
+
+int mat2d_increase_size(TMat2D * mat, int nrows, int ncolumns)
+{
+    
+    mat = realloc(sizeof(TMat2D));
+    if (mat != NULL)
+    {
+        mat->data = realloc(nrows * ncolumns * sizeof(double));
+        if (mat->data != NULL)
+        {
+            mat->nColumns = ncolumns;
+            mat->nRows = nrows;
+        }
+        return mat;
+    }
+
+    else
+        return NULL;
+}

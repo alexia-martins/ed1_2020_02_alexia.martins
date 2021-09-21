@@ -25,3 +25,5 @@ int lista_cheia(Lista* li);
 int lista_vazia(Lista* li);
 int imprime_lista(Lista* li);
 int remove_lista_otimizado(Lista* li, int mat);
+int troca_pos_lista (Lista* li, int pos1, int pos2);
+int remove_intervalo_lista(Lista *li, int start, int end);

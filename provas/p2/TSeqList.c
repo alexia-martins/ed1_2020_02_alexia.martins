@@ -81,16 +81,19 @@ int insere_lista_inicio(Lista *li, aluno al)
 }
 int insere_lista_ordenada(Lista *li, aluno al)
 {
-     if (li == NULL || li->qtd == MAX){
+    if (li == NULL || li->qtd == MAX)
+    {
         return -1;
     }
-    int k,i = 0;
+    int k, i = 0;
 
-    while(i<li->qtd && li->dados[i].matricula < al.matricula){
+    while (i < li->qtd && li->dados[i].matricula < al.matricula)
+    {
         i++;
     }
-    for(k=li->qtd-1; k >= i; k--){
-        li->dados[k+1] = li->dados[k];
+    for (k = li->qtd - 1; k >= i; k--)
+    {
+        li->dados[k + 1] = li->dados[k];
     }
     li->dados[i] = al;
     li->qtd++;
@@ -119,9 +122,11 @@ int libera_lista(Lista *li)
         li->qtd = 0;
         return 0;
     }
-    else{
+    else
+    {
         return -1;
-}}
+    }
+}
 
 int remove_lista(Lista *li, int mat)
 {
@@ -221,5 +226,56 @@ int remove_lista_otimizado(Lista *li, int mat)
         li->qtd--;
         li->dados[i] = li->dados[li->qtd];
         return 0; //removido com sucesso
+    }
+}
+int troca_pos_lista(Lista *li, int pos1, int pos2)
+{
+    aluno aux;
+    if (li == NULL || li->qtd <= 0 || pos1 > li->qtd || pos2 > li->qtd || pos1 < 0 || pos2 < 0)
+    {
+        return -1;
+    }
+    else
+    {
+        //copiando para meu aluno auxiliar
+        aux.matricula = li->dados[pos1 - 1].matricula;
+        strcpy(aux.nome, li->dados[pos1 - 1].nome);
+        aux.n1 = li->dados[pos1 - 1].n1;
+        aux.n2 = li->dados[pos1 - 1].n2;
+        aux.n3 = li->dados[pos1 - 1].n3;
+        // copiando os dados da pos 2 pra pos 1
+        li->dados[pos1 - 1] = li->dados[pos2 - 1];
+        // copiando os dados do auxiliar para pos 2
+        li->dados[pos2 - 1].matricula = aux.matricula;
+        strcpy(li->dados[pos2 - 1].nome, aux.nome);
+        li->dados[pos2 - 1].n1 = aux.n1;
+        li->dados[pos2 - 1].n2 = aux.n2;
+        li->dados[pos2 - 1].n3 = aux.n3;
+        return 0;
+    }
+}
+int remove_intervalo_lista(Lista *li, int start, int end)
+{
+    if (li == NULL || li->qtd <= 0 || start > li->qtd || end > li->qtd || start < 0 || end < 0 || start > end)
+    {
+        return -1;
+    }
+    else
+    {
+        int i;
+
+
+            
+            for (int j = li->qtd; j >=0; j--)
+            {
+                if (j>=(start-1) && j < end){
+                for (i = j; i < li->qtd; i++)
+        {
+                li->dados[i] = li->dados[i + 1];
+            }
+            
+        }
+    }
+    li->qtd -= ((end - start) + 1);
     }
 }
