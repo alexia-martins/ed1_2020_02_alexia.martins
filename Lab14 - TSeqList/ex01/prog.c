@@ -20,7 +20,7 @@ int main()
                   {5, "Adao", 9.5, 7.6, 8.8},
                   {6, "Alexia", 9.5, 7.6, 8.8},
                   {7, "Joana", 9.5, 7.6, 8.8}};
-
+/*
     for (int i = 0; i < 2; i++)
     {
         printf("Dados do alunos:\n");
@@ -37,20 +37,24 @@ int main()
         {
             printf("\nErro: lista cheia ou nao alocada.");
         }
-    }
+    }*/
     //insere final
-    for (int j = 0; j < 4; j++)
+    for (int j = 0; j < 7; j++)
     {
         aux2 = insere_lista_final(alunos_enade, z[j]);
         if (aux2 == -1)
             printf("\nErro: lista cheia ou nao alocada.");
-    }
+    }/*
     printf("IMPRIMINDO ALUNOS PET (INSERIDOS MANUALMENTE NO INICIO):\n");
     imprime_lista(alunos_pet);
-
+*/
     printf("\nIMPRIMINDO ALUNOS ENADE (JA SETADOS NO FIM):\n");
     imprime_lista(alunos_enade);
-
+    printf("==============================================\n");
+    printf("==============================================\n");
+    remove_intervalo_lista (alunos_enade, 3, 5);
+    imprime_lista (alunos_enade);
+    /*
     printf("==============================================\n");
 
     printf("USANDO INSERIR ORDENADO NO ALUNOS PET: \n");
@@ -206,7 +210,7 @@ int main()
         }
         printf("Lista atualizada:\n");
         imprime_lista(alunos_enade);
-    }
+    }*/
     printf("==============================================\n");
 
     printf("Liberando lista enade:\n");
