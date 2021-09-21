@@ -211,11 +211,26 @@ int main()
             }
 
             break;
-        case 5:
+        case 5: 
+                printf("Which matrix to fill 1 or 2?");
+                scanf("%d", &info);
+                printf ("What is the start of the break?");
+                scanf ("%d", &rtemp);
+                printf ("What is the end of the break");
+                scanf ("%d", &ctemp);
+                if (info == 1) {
+                mat2D_fill (pMat1, rtemp, ctemp);
+}
+               else if (info == 2) {
+                mat2D_fill (pMat2, rtemp, ctemp);
+}
+                else printf ("Matrix doesn't exist\n");
             break;
         case 6:
+                mat2D_adding (pMat1, pMat2, pMat3);
             break;
         case 7:
+                
             break;
         case 8:
             break;
@@ -239,11 +254,3 @@ int main()
     }
 }
 
-/*
-for (i=0; i<nrows; i++){
-    for (j=0; j<ncolumns; j++){
-printf ("Value position %d %d: %lf ", i, j, mat2D_get_value(matrice, i, j, p));
-}
-}
-}
-*/
