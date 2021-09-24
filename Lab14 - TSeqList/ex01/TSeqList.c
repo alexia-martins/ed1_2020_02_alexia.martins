@@ -243,8 +243,11 @@ int remove_lista_otimizado(Lista *li, int mat)
             i++;
         if (i == li->qtd)
             return 1; //elemento nao encontrado
+        
+        else {
         li->qtd--;
         li->dados[i] = li->dados[li->qtd];
         return 0; //removido com sucesso
+             }
     }
 }
