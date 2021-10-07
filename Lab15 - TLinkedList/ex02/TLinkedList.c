@@ -213,7 +213,7 @@ int list_insert(TLinkedList *li, int pos, struct aluno al)
             curr = curr->next;
             i++;
         }
-        if (prev == NULL) // insere na cabeça (lista vazia ou não)
+        if (prev == NULL)
         {
             return IMPOSSIBLE_POSITION;
             //Lista está vazia e por isso não podemos inserir em uma posição > 1
@@ -222,8 +222,8 @@ int list_insert(TLinkedList *li, int pos, struct aluno al)
         { // insere a partir do segundo elemento (incluso)
             prev->next = node;
             node->next = curr;
+            return SUCCESS;
         }
-        return SUCCESS;
     }
 }
 
@@ -314,9 +314,10 @@ int list_erase_data(TLinkedList *li, int mat)
         }
 
         if (curr->data.matricula == mat)
-        {
-            prev = curr;
-            
+        {   
+            prev->next = curr->next;
+            free (curr);
+            return SUCCESS;
             //compara se é a matricula solicitada
         }
         else
@@ -324,6 +325,163 @@ int list_erase_data(TLinkedList *li, int mat)
             return ELEM_NOT_FOUND;
         }
 
-        return SUCCESS;
+        
     }
 }
+int list_erase_pos(TLinkedList *li, int pos){
+if (li == NULL)
+    {
+        return INVALID_NULL_POINTER;
+    }
+    else
+    {
+        list_node *curr; // current - nó atual
+        list_node *prev; // previous - nó anterior
+        prev = NULL;
+        curr = list->head;
+        i=1;
+        while ((curr != NULL) && i != pos)
+        {
+            prev = curr;
+            curr = curr->next;
+            i++;
+        }
+
+        if (i == pos)
+        {   
+            prev->next = curr->next;
+            free (curr);
+            
+            //compara se é a posicao solicitada
+            return SUCCESS;
+        }
+        else
+        {
+            return ELEM_NOT_FOUND;
+        }  
+    }
+}
+int list_find_pos(TLinkedList *li, int pos, struct aluno *al){
+if (li == NULL)
+    {
+        return INVALID_NULL_POINTER;
+    }
+    else
+    {
+        list_node *curr; // current - nó atual
+        list_node *prev; // previous - nó anterior
+        prev = NULL;
+        curr = list->head;
+        i=1;
+        while ((curr != NULL) && i != pos)
+        {
+            prev = curr;
+            curr = curr->next;
+            i++;
+        }
+
+        if (i == pos)
+        {   
+           al->data = curr->data;
+            
+            //compara se é a posicao solicitada
+            return SUCCESS;
+        }
+        else
+        {
+            return ELEM_NOT_FOUND;
+        }  
+    }
+}
+int list_find_mat(TLinkedList *li, int nmat, struct aluno *al){
+ if (li == NULL)
+    {
+        return INVALID_NULL_POINTER;
+    }
+    else
+    {
+        list_node *curr; // current - nó atual
+        list_node *prev; // previous - nó anterior
+        prev = NULL;
+        curr = list->head;
+        while ((curr != NULL) && curr->data.matricula != nmat)
+        {
+            prev = curr;
+            curr = curr->next;
+        }
+
+        if (curr->data.matricula == nmat)
+        {   
+            al->data = curr->data;
+            return SUCCESS;
+            //compara se é a matricula solicitada
+        }
+        else
+        {
+            return ELEM_NOT_FOUND;
+        }
+    }
+}
+
+int list_front(TLinkedList *li, struct aluno *al){
+ if (li == NULL)
+    {
+        return INVALID_NULL_POINTER;
+    }
+    else
+    {
+  
+            al->data = li->head.data;
+            return SUCCESS;
+    }
+}
+
+int list_back(TLinkedList *li, struct aluno *al){
+ if (li == NULL)
+    {
+        return INVALID_NULL_POINTER;
+    }
+    else
+    {
+        list_node *curr; // current - nó atual
+        list_node *prev; // previous - nó anterior
+        prev = NULL;
+        curr = list->head;
+        while ((curr != NULL)
+        {
+            prev = curr;
+            curr = curr->next;
+        }
+    al->data = prev->data;
+    return SUCCESS;
+    }
+
+}
+int list_get_pos(TLinkedList *li, int nmat, int *pos){
+ if (li == NULL)
+    {
+        return INVALID_NULL_POINTER;
+    }
+    else
+    {
+        list_node *curr; // current - nó atual
+        list_node *prev; // previous - nó anterior
+        prev = NULL;
+        curr = list->head;
+        i=1;
+        while ((curr != NULL) && curr->data.matricula != nmat)
+        {
+            prev = curr;
+            curr = curr->next;
+            i++;
+        }
+        if (curr->data.matricula == nmat){
+            *pos = i;
+        return SUCCESS;
+        }
+        else
+        {
+            return ELEM_NOT_FOUND;
+        }
+    }
+}              
