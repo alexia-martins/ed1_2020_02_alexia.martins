@@ -87,8 +87,23 @@ int mat2D_set_value(TMat2D *mat, int nrows, int ncolumns, double value)
         return 0;
     }
 }
+int mat2d_increase_size(TMat2D * mat, int nrows, int ncolumns)
+{
+    if (mat != NULL)
+    {
+        mat->data += calloc (mat, (nrows * ncolumns * sizeof(double)));
+        if (mat->data != NULL)
+        {
+            mat->nColumns += ncolumns;
+            mat->nRows += nrows;
+        }
+        return mat;
+    }
 
-/*void mat2D_print_everything (TMat2D *mat){
+    else
+        return NULL;
+}
+void mat2D_print_everything (TMat2D *mat){
 int i, j, aux;
 if (mat->data!=NULL) {
 for (i=0; i<mat->nRows; i++){
@@ -97,4 +112,14 @@ aux = i * mat->nColumns + j;
 printf ("%.2lf", mat->data[aux]);
 }}}
 else printf ("Incompatible indexs.\n");
-}*/
+}
+int mat2D_adding (TMat2D *mat1, TMat2D *mat2, TMat2D *mat3){
+    int i, j, k;
+    for (i =0; i< mat1->ncolumns; i++){
+    for (j = 0; j< mat2->nrows; j++)
+    {
+        for (k = 0; k<mat3->ncolumns; k++)
+        mat2D_set_value (mat3, j, k, );
+        }
+    }
+}
