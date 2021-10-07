@@ -16,14 +16,14 @@ remove_intervalo_lista(lista,5,9)
 int remove_intervalo_lista(Lista *li, int start, int end)
 {
     if (li == NULL || li->qtd <= 0 || start > li->qtd || end > li->qtd || start < 0 || end < 0 || start > end)
-    {
+    {// check:<<<erro: <=0>>>>
         return -1;
     }
     else
     {
         int i;
 
-
+// check:<<<erro: e2.3: Um só laço deve ser usado O(n). Da forma como está envolve deslocar os mesmos elementos várias vezes O(N²)>>>>
             
             for (int j = li->qtd; j >=0; j--)
             {
