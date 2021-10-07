@@ -4,6 +4,7 @@
 #define OUT_OF_RANGE -3
 #define ELEM_NOT_FOUND -4
 
+
 struct aluno{
     int matricula;
     char nome[30];
