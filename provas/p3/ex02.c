@@ -25,6 +25,30 @@ Saída concatenada (armazenada em \pre\):
 pre <-> in <-> pos
 */
 
-int list_concat3(TDLinkedList *pre, TDLinkedList *in, TDLinkedList *pos){
-
-}
+int list_concat3(TDLinkedList *pre, TDLinkedList *in, TDLinkedList *pos)
+{
+      if (pre->dados == NULL || in->dados == NULL || pos->dados == NULL)
+      {
+            return INVALID_NULL_POINTER;
+      }
+      else
+      {
+            counter = 0;
+            while (counter < in->size)
+            {
+                  list_node *node;
+                  node = malloc(sizeof(list_node));
+                  list_push_front (pre->dados, in->dados);
+                  node = in->next;
+            }
+                        while (counter < pos->size)
+            {
+                  list_node *node;
+                  node = malloc(sizeof(list_node));
+                  list_push_front (pre->dados, pos->dados);
+                  node = pos->next;
+            }
+      return SUCCESS;
+      }
+      
+      }

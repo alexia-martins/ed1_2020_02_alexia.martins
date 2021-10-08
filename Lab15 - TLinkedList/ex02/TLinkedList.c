@@ -12,7 +12,7 @@ struct list_node
 
 typedef struct TLinkedList
 {
-    list_node *head;
+    list_node *head, list_node *prev;
     int size; // quantidade de elementos na lista
     int sorted; // indica se a lista é ordenada por número de matrícula: 0 – não ordenada ; 1 - ordenada 
 } TLinkedList;
