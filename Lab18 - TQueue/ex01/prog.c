@@ -1,73 +1,136 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
-
+#include <string.h>
 #include "TQueue.h"
-#include "../TLinkedList/TLinkedList.h"
 
-struct TQueue{
-  TLinkedList* data;
-};
+#define OPMAX 6
+#define OPMIN 0
 
-TQueue *create_queue(){
-  TQueue *fi;
-  fi = malloc(sizeof(TQueue));
-    if(fi == NULL)
-      return fi;
-    fi->data = list_create();
-    if(fi->data == NULL){
-      free(fi);
-      fi = NULL;
+
+void exibirOpcoes (void)
+{
+    printf("\n");
+    printf("\n\n<< Lista com 10 alunos aleátorio >> \n\n");
+    printf("1 - Criar Fila  \n");
+    printf("2 - Inserir  \n");
+    printf("3 - Remover \n");
+    printf("4 - Retorna o Primeiro \n");
+    printf("5 - Verifica se está vaiza  \n");
+    printf("0 - Sair \n\n");
+}
+
+
+unsigned int qualescolha (void)
+{
+    unsigned int escolha = 0;
+
+    printf("\nEscolha uma opção: ");
+    scanf("%u", &escolha); 
+    while ( !(OPMIN <= escolha && escolha <= OPMAX))
+    {
+        printf("opção inválida!!!\n\n");
+        printf("Digite uma opção: ");
+        scanf("%d", &escolha);
     }
-    return fi;
+    return escolha;
 }
 
+void menu (){
+  
+  int ret, tamanho;
+  struct student sl[10] = {{1,"Nícolas",9.5,7.8,8.5},
+                          {2,"Gustavo",7.5,8.7,6.8},
+                          {3,"Lucas",9.7,6.7,8.4},
+                          {4,"Douglas",5.7,6.1,7.4},
+                          {5,"Guilherme",9.0,5.1,8.4},
+                          {6,"Paulo",6.7,6.4,7.5},
+                          {7,"Jones",4.7,9.1,7.8},
+                          {8,"Luís",8.7,6.8,7.5},
+                          {9,"Maycon",6.5,6.8,9.4},
+                          {10,"Bruno",9.7,7.3,8.6}};
+                TQueue* fi = create_queue();
+                for(int i=0; i< 10; i++){
+                  enqueue(fi, sl[i]);
+                }
 
-int free_queue(TQueue *fi){
-  if(fi == NULL)
-    return INVALID_NULL_POINTER;
-  else{
-    list_free(fi->data);
-    free(fi);
-    return SUCCESS;
+  while(1){
+
+          exibirOpcoes();
+
+          switch (qualescolha()){
+
+              case 1:{
+                    print_queue(fi);
+              break;
+              }
+
+              case 2:{
+                    struct student slaux;
+                    printf("qual nome do aluno? ");
+                    scanf("%s", slaux.name);
+                    printf("qual numero de matricula? ");
+                    scanf("%d", &slaux.id);
+                    printf("Nota 1: ");
+                    scanf("%f", &slaux.g1);
+                    printf("Nota 2: ");
+                    scanf("%f", &slaux.g2);
+                    printf("Nota 3: ");
+                    scanf("%f", &slaux.g3);
+                    if(enqueue(fi, slaux) == SUCCESS){
+                      printf("\n\n");print_queue(fi);}
+                    else if(enqueue(fi, slaux) == INVALID_NULL_POINTER){
+                      printf("\nFila não alocada ou Ponteiro invalido.");}
+                    else if(enqueue(fi, slaux) == OUT_OF_MEMORY){
+                      printf("\nFora de Memória.");}
+                    else if(enqueue(fi, slaux) == FULL){
+                      printf("\nFila cheia.");}
+              break;
+              }
+              case 3:{
+                    if (dequeue(fi) == SUCCESS)
+                      print_queue(fi);
+                    else if (dequeue(fi) == EMPTY)
+                      printf("\nLista vazia.");
+                    else if (dequeue(fi) == INVALID_NULL_POINTER)
+                      printf("\nFila não alocada ou Ponteiro invalido.");
+              break;
+              }
+              
+              case 4:{
+                struct student slaux;
+                    if(queue_front(fi, &slaux) == SUCCESS){
+                      printf("\nMatrícula: %d\n", slaux.id);
+                      printf("Nome: %s\n", slaux.name);
+                      printf("Notas: %.2f, %.2f, %.2f\n", slaux.g1, slaux.g2, slaux.g3);}
+                    else if (dequeue(fi) == EMPTY)
+                      printf("\nLista vazia.");
+                    else if (dequeue(fi) == INVALID_NULL_POINTER)
+                      printf("\nFila não alocada ou Ponteiro invalido.");
+                
+              break;
+              }
+              
+              case 5:{
+                    if(queue_empty(fi) == EMPTY)
+                      printf("\nA fila está vazia.\n");
+                    else if (queue_empty(fi) == INVALID_NULL_POINTER)
+                      printf("\nFila não alocada ou Ponteiro invalido.");
+                    else if(queue_empty(fi) == NOT_EMPTY)
+                      printf("\nFila não está vazia.");
+              break;
+              }
+
+              case 0:{
+                free_queue(fi);
+                return;
+              }
+          }
+      }
   }
-}
 
-int enqueue(TQueue *fi, struct student sl){
-  if(fi == NULL)
-    return INVALID_NULL_POINTER;
-  else
-    return (list_push_back(fi->data, sl));
-}
-
-int print_queue(TQueue *fi){
-  if(fi == NULL)
-    return INVALID_NULL_POINTER;
-  else
-    return (list_print(fi->data));
-}
-
-int dequeue(TQueue *fi){
-  if(fi == NULL)
-    return INVALID_NULL_POINTER;
-  else
-    return (list_pop_front(fi->data));
-}
-
-int queue_front(TQueue *fi, struct student *sl){
-  if(fi == NULL)
-    return INVALID_NULL_POINTER;
-  else
-    return (list_front(fi->data, sl));
-}
-
-int queue_empty(TQueue *fi){
-  if(fi == NULL)
-    return INVALID_NULL_POINTER;
-  else{
-    if(list_size(fi->data) == 0)
-      return EMPTY;
-    else
-      return NOT_EMPTY;
-  }
+int main (void)
+{
+    menu();
+    printf("\n Bye!");
+    return 0;
 }
