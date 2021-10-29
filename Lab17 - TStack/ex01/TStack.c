@@ -39,7 +39,10 @@ int stack_push(TStack *st, struct aluno al)
 
 int stack_pop(TStack *st)
 {
-
+    if(st == NULL)
+        return INVALID_NULL_POINTER;    
+    else
+        return rem_list_seq_end(st->data);
 }
 
 int stack_top(TStack *st, struct aluno *al)
