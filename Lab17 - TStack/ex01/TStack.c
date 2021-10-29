@@ -50,6 +50,7 @@ int stack_top(TStack *st, struct aluno *al)
 int stack_empty(TStack *st)
 {
 
+
 }
 
 int stack_full(TStack *st)

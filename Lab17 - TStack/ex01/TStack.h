@@ -12,6 +12,7 @@ int stack_push(TStack *st, struct aluno al);
 int stack_pop(TStack *st);
 int stack_top(TStack *st, struct aluno *al);
 
+
 int stack_empty(TStack *st);
 int stack_full(TStack *st);
 int stack_print(TStack *st);
