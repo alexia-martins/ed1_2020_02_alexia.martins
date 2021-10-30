@@ -24,7 +24,7 @@ int main()
         } else if (c>=65 && c <= 90){ // testa se a letra é maior que A e menor que Z
             printf("\noperando: %c (%d)", c,c);
             printf("\nDigite o valor para %c = ",c);
-            scanf("%f",&valores[c-65]); // letra A é mapeada na posição zero do vetor
+            scanf("%f", &valores[c-65]); // letra A é mapeada na posição zero do vetor
         }
 
     }

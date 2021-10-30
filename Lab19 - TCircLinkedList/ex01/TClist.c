@@ -314,6 +314,16 @@ int list_front(TClist *li, struct student *sl){
   *sl = aux->data;
   return SUCCESS;
 }
+int list_next(TClist *li, struct student *sl){
+  if(li == NULL)
+    return INVALID_NULL_POINTER;
+  if(li->end == NULL)
+    return OUT_OF_MEMORY;
+  Clist_node *aux;
+  aux = li->end->next;
+  *sl = aux->data;
+  return SUCCESS;
+}
 
 int list_back(TClist *li, struct student *sl){
   if(li == NULL)

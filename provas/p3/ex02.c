@@ -37,7 +37,6 @@ int list_concat3(TDLinkedList *pre, TDLinkedList *in, TDLinkedList *pos)
             while (counter < in->size)
             {
                   list_node *node;
-                  node = malloc(sizeof(list_node));
                   list_push_front (pre->dados, in->dados);
                   node = in->next;
             }

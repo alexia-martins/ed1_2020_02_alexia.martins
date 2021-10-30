@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "../TStack3/TStack.h"
+#include "TStack.h"
 
 #define MAX 100
 char pilha[MAX];
