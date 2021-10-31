@@ -64,7 +64,7 @@ int list_erase_max_nota_n1(TDLinkedList *li)
         counter = 1;
         while (counter > 0)
         {
-            for (int i = 1; i <= li->size; i++)
+            for (int i = 1; i <= li->size; i++)// check:<<<erro: nao entendi o que foi feito aqui>>>>
             {
                 if (auxAl->data.n1 > aux->data.n1)
                 {
@@ -87,7 +87,7 @@ int list_erase_max_nota_n1(TDLinkedList *li)
             {
                 list_node *auxAl2;
                 auxAl2 = aux2->next;
-                for (int i = 1; i <= li->size; i++)
+                for (int i = 1; i <= li->size; i++)// check:<<<erro: aqui tb nao, está parecido com o anterior. O que vc está querendo fazer com esse código?>>>>
                 {
                     if (auxAl->data.n1 > aux->data.n1)
                     {

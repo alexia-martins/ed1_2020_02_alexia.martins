@@ -25,6 +25,7 @@ Saída concatenada (armazenada em \pre\):
 pre <-> in <-> pos
 */
 
+// check:<<<erro: creio que faltou compreender o que o exercício pediu, pois nao foi atendido>>>>
 int list_concat3(TDLinkedList *pre, TDLinkedList *in, TDLinkedList *pos)
 {
       if (pre->dados == NULL || in->dados == NULL || pos->dados == NULL)
@@ -43,8 +44,8 @@ int list_concat3(TDLinkedList *pre, TDLinkedList *in, TDLinkedList *pos)
                         while (counter < pos->size)
             {
                   list_node *node;
-                  node = malloc(sizeof(list_node));
-                  list_push_front (pre->dados, pos->dados);
+                  node = malloc(sizeof(list_node));// check:<<<erro: não tem que ter nenhuma alocação de memória >>>>
+                  list_push_front (pre->dados, pos->dados);// check:<<<erro: push aloca memoria>>>>
                   node = pos->next;
             }
       return SUCCESS;

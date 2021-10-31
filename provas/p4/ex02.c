@@ -58,20 +58,25 @@ int list_free(TCircList *li)
     return SUCCESS;
 }
 
+// check:<<<erro: faltou teste de lista vazia>>>>
+// check:<<<erro: fez o teste para saber se é a primeira vez que chama a função>>>>
+// check:<<<erro: não retornou o tipo de dado esperado >>>>
+
+// check:<<<comentário: não entendi qual é para avaliar entre as duas soluções apresentadas>>>>
 node list_next(TCircList *li)
 {
     if (li == NULL)
     {
         return INVALID_NULL_POINTER;
     }
-    if (li->next != li->head)
+    if (li->next != li->head)// check:<<<erro: faltou teste de lista vazia>>>>
     {
         li->next = li->next->prox;
         return li->next;
     }
     else
     {
-        return li->next;
+        return li->next;// check:<<<erro: tem que retornar o aluno>>>>
     }
 
 }

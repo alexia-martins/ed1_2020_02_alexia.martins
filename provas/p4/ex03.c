@@ -14,7 +14,7 @@ Expressão:
 */
 
 
-
+// check:<<<erro: não pedi código!!! era para resolver a equação>>>>
 
 char *infixforposfix (char *inf) {
   int n = strlen (inf);

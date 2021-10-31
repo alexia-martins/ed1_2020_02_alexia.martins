@@ -13,7 +13,7 @@ Se a pessoa digitar abcd, o programa vai devolver: dcba
 #include <stdio.h>
 
 int main(){
-stack_create ();
+stack_create ();// check:<<<erro: quem recebe a pilha>>>>
 int qtd;
 char c;
 printf ("Digite quantas letras serão colocadas: ");
@@ -24,7 +24,7 @@ printf ("Digite a letra: ");
 scanf ("%c", &c);
 stack_push (st, c);
 }
-
+// check:<<<erro: não está usando a pilha>>>>
   for (int j = li->qtd; j > 0; j-- {
     printf("%c", li->letra[j]);
   }

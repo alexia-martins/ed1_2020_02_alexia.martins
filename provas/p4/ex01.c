@@ -23,6 +23,8 @@ Vetor Concatenado = [ 1, 5, 2, 10, 30]
 #include <stdio.h>
 #include <stdlib.h>
 
+// check:<<<erro: vetor resultante deve ser passado como ponteiro de ponteiro>>>> -4
+
 int contaneta(int *p1, int tam1, int *p2, int tam2, int *p3, int *tam3)
 {
     int n = tam1 + tam2;
@@ -53,7 +55,7 @@ int main()
     int v1[5] = {10, 11, 13, 15, 13};
     int v2[3] = {1, 5, 2};
     int *p1 = v1, *p2 = v2;
-    int *v3 = NULL, *qtd = NULL;
+    int *v3 = NULL, *qtd = NULL;// check:<<<erro: variavel quantidade deve ser alocada (esttática mesmo, depois é só usar &)>>>>
     contaneta (p1, 5, p2, 3, v3, qtd);
     int cont;
 
