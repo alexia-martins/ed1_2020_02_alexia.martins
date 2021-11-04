@@ -24,8 +24,8 @@ troca_pos_lista( lista, 4, 10)
 
 int troca_pos_lista(Lista *li, int pos1, int pos2)
 {
-    aluno aux;
-    if (li == NULL || li->qtd <= 0 || pos1 > li->qtd || pos2 > li->qtd || pos1 < 0 || pos2 < 0)
+    
+    if (li == NULL || li->qtd <= 0 || pos1 > li->qtd || pos2 > li->qtd || pos1 <= 0 || pos2 <= 0)
     {// check:<<<erro: e1.2: erro em testes de tamanho da lista com as posições de troca (posições aceitas >=1 <=qtd/ teste de lista null>>>>
         return -1;
     }
@@ -33,20 +33,12 @@ int troca_pos_lista(Lista *li, int pos1, int pos2)
     {
         //copiando para meu aluno auxiliar
         // check:<<<erro: e1.3: Uso de funções e comandos excessivos para fazer a cópia do aluno, sendo um simples comando de atribuição funciona para structs. Exemplo: aluno_temp = lista->dados[pos]>>>>
-        aux.matricula = li->dados[pos1-1].matricula;
-        strcpy(aux.nome, li->dados[pos1-1].nome);
-        aux.n1 = li->dados[pos1-1].n1;
-        aux.n2 = li->dados[pos1-1].n2;
-        aux.n3 = li->dados[pos1-1].n3;
+     aluno aux = li->dados [pos-1];
         // copiando os dados da pos 2 pra pos 1
-        li->dados[pos1-1] = li->dados[pos2-1];
+     li->dados[pos1-1] = li->dados[pos2-1];
         // copiando os dados do auxiliar para pos 2
-        li->dados[pos2-1].matricula = aux.matricula;
-        strcpy(li->dados[pos2-1].nome, aux.nome);
-        li->dados[pos2-1].n1 = aux.n1;
-        li->dados[pos2-1].n2 = aux.n2;
-        li->dados[pos2-1].n3 = aux.n3;
-        return 0;
+     li->dados [pos2-1] = aux->dados;   
+     return 0;
     }
 }
 
