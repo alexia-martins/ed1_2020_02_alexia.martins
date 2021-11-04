@@ -33,32 +33,33 @@ mat2d_increase_size(mat,3,3)
 
 */
 
-TMat2D mat2d_increase_size(TMat2D * mat, int nrows, int ncolumns)
+int mat2d_increase_size (TMat2D * mat, int nrows, int ncolumns)
 {
-if (mat->nrows >= nrows || mat->ncolumns >= ncolumns || mat == NULL)
+if (mat->nrows >= nrows || mat->ncolumns >= ncolumns || mat == NULL){
+return -1;
+}
     else
     {
         TMat2D aux = mat2D_Create (mat->nrows, mat->ncolumns);
         aux->data = mat->data;
         mat->data = realloc(nrows * ncolumns * sizeof(double));
-     // mat->data += calloc (mat, (nrows * ncolumns * sizeof(double)));
-        
-        
         if (mat->data != NULL)
         {
+        cont = 0;
         for (i=0; i<mat->nRows; i++){
     for (j=0; j<mat->nColumns; j++){
-     cont = 0;
-    int aux2 = i * mat->nColumns + j;
+    int aux2 = (i * mat->nColumns) + j;
     if (j == aux->nrows || i == aux->ncolumns) {
     mat->data [aux2] = 0;
     }
      else {
      mat->data [aux2] = aux->data[cont];
-     cont++;}
-}}}
-        }}}
-        return mat;
+     cont++;
+     }
+}}
+        return 0;
+        }
+
     }
  }
                  
