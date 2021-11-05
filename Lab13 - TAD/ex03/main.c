@@ -230,7 +230,12 @@ int main()
                 mat2D_adding (pMat1, pMat2, pMat3);
             break;
         case 7:
-                
+                printf("Inform the number of lines: \n");
+                scanf("%d", &nrows);
+                printf("Inform the number of columns: \n");
+                scanf("%d", &ncolumns);
+                mat2d_increase_size (pMat1, nrows[1], ncolumns[1]);
+                mat2D_print_everything (pMat1);
             break;
         case 8:
             break;

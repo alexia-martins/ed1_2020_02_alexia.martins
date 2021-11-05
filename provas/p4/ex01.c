@@ -25,7 +25,7 @@ Vetor Concatenado = [ 1, 5, 2, 10, 30]
 
 // check:<<<erro: vetor resultante deve ser passado como ponteiro de ponteiro>>>> -4
 
-int contaneta(int *p1, int tam1, int *p2, int tam2, int *p3, int *tam3)
+int contaneta(int *p1, int tam1, int *p2, int tam2, int *res, int *tres)
 {
     int n = tam1 + tam2;
     if (tam1 == 0 || tam2 == 0)
@@ -35,8 +35,9 @@ int contaneta(int *p1, int tam1, int *p2, int tam2, int *p3, int *tam3)
 
     else
     {
-        p3 = malloc(n * sizeof(int));
-        *tam3 = n;
+        
+        int *p3 = malloc(n*sizeof (int));
+        if (p3 != NULL){
         for (int i = 0; i < tam1; i++)
         {
             p3[i] = p1[i];
@@ -45,6 +46,9 @@ int contaneta(int *p1, int tam1, int *p2, int tam2, int *p3, int *tam3)
         {
             p3 [j+tam1] = p2 [j]; 
         }
+
+        *tres = n;
+        res = p3;
     }
     return 0;
 }
@@ -54,17 +58,20 @@ int main()
 
     int v1[5] = {10, 11, 13, 15, 13};
     int v2[3] = {1, 5, 2};
+    int qtd, aux;
     int *p1 = v1, *p2 = v2;
-    int *v3 = NULL, *qtd = NULL;// check:<<<erro: variavel quantidade deve ser alocada (esttática mesmo, depois é só usar &)>>>>
-    contaneta (p1, 5, p2, 3, v3, qtd);
+    int *v3 = NULL;// check:<<<erro: variavel quantidade deve ser alocada (esttática mesmo, depois é só usar &)>>>>
+    aux = contaneta (p1, 5, p2, 3, v3, &qtd);
     int cont;
-
-
+    if(aux == -1){
+        printf("Nao foi possivel concatenar\n");}
+else {
     for (cont = 0; cont < *qtd; cont++)
     {
         printf("%d ", v3[cont]);
-        printf ("Quantidade: %d", *qtd);
+        printf ("Quantidade: %d", qtd);
     }
 
     free(v3);
+}
 }

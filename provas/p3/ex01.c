@@ -1,11 +1,11 @@
 /*
-Considere o TAD TDLinkedList que serve para manipular uma lista duplamente 
-encadeada de alunos (a lista usada na prática 16 – copiar o código 
+Considere o TAD TDLinkedList que serve para manipular uma lista duplamente
+encadeada de alunos (a lista usada na prática 16 – copiar o código
 da SUA PRÁTICA)
 
-Implemente no TAD a função  int list_erase_max_nota_n1(TDLinkedList *li), que 
+Implemente no TAD a função  int list_erase_max_nota_n1(TDLinkedList *li), que
 retira da  lista todos os alunos que possuem a maior nota na primeira prova
-(elemento n1 da struct aluno; note que mais de um aluno pode possuir 
+(elemento n1 da struct aluno; note que mais de um aluno pode possuir
 a nota máxima). Pode-se utilizar qualquer funçã ojá implementada na
 lista (que estão no .h)
 
@@ -56,53 +56,31 @@ int list_erase_max_nota_n1(TDLinkedList *li)
     else
     {
         list_node *aux;
-        list_node *auxAl;
+        int ntmax = 0, aux2;
+        int posM = 1; // pos do maior numero na lista (0 no vetor)
         aux = li->start;
-        aux2 = li->start;
-        auxAl = aux->next;
-        auxAlPrev = NULL;
-        counter = 1;
-        while (counter > 0)
+        while (aux != NULL)
         {
-            for (int i = 1; i <= li->size; i++)// check:<<<erro: nao entendi o que foi feito aqui>>>>
+            if (aux->data.n1 >= maior)
             {
-                if (auxAl->data.n1 > aux->data.n1)
-                {
-                    aux = aux->next;
-                }
-                else
-                {
-                    if (auxAl->data.n1 == aux->data.n1)
-                    {
-                        counter += 1;
-                    }
-                    else
-                    {
-                        auxAl->data = aux->data;
-                    }
-                    aux = aux->next;
-                }
-            }
-            while (aux2->next != NULL)
-            {
-                list_node *auxAl2;
-                auxAl2 = aux2->next;
-                for (int i = 1; i <= li->size; i++)// check:<<<erro: aqui tb nao, está parecido com o anterior. O que vc está querendo fazer com esse código?>>>>
-                {
-                    if (auxAl->data.n1 > aux->data.n1)
-                    {
-                        aux = aux->next;
-                    }
-                    else
-                    {
-                        auxAl->data = aux2->data;
-                    }
-                }
-                auxAlPrev = auxAl->next;
-                free(auxAl2);
-                counter--;
+                ntmax = aux->data.n1;
             }
         }
-        return SUCCESS;
+        aux = li->start;
+        while (curr != NULL)
+        {
+            if (aux->data.n1 == maior)
+            {
+                aux2 = list_erase_pos(li, posM);
+                if (aux2 != 0)
+                {
+                    return 1; // elemento nao encontrado na lista para apagar
+                    posM--;   // nao "existe" item para ser apagado da lista pos zerada
+                }
+                aux = aux->next;
+                posM++;
+            }
+            return 0; // deu tudo certo;
+        }
     }
 }

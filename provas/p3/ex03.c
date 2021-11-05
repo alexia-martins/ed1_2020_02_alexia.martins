@@ -13,19 +13,25 @@ Se a pessoa digitar abcd, o programa vai devolver: dcba
 #include <stdio.h>
 
 int main(){
-stack_create ();// check:<<<erro: quem recebe a pilha>>>>
+      TStack *pilhaLetras;
+
 int qtd;
 char c;
 printf ("Digite quantas letras serão colocadas: ");
 scanf ("%d", &qtd);
-
+pilhaLetras = stack_create ();// check:<<<erro: quem recebe a pilha>>>>
 for (int i =0; i<qtd; i++){
 printf ("Digite a letra: ");
+getchar();
 scanf ("%c", &c);
-stack_push (st, c);
+stack_push (pihaLetras, c); //inserindo na base da pilha
 }
+
 // check:<<<erro: não está usando a pilha>>>>
-  for (int j = li->qtd; j > 0; j-- {
-    printf("%c", li->letra[j]);
+char aux;
+  for (int j =0; j < qtd; j++ {
+    stack_top (pilhaLetras, &aux);
+    stack_pop (pilhaLetras);
+    printf ("%c ", &aux);
   }
 }

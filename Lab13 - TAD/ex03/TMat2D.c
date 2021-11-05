@@ -53,6 +53,9 @@ int mat2D_fill(TMat2D *mat, int start, int end)
                 mat2D_set_value(mat, i, j, start);
                 start++;
             }
+            else {
+                mat2D_set_value (mat, i, j, end);
+            }
         }
     }
 }
@@ -87,21 +90,43 @@ int mat2D_set_value(TMat2D *mat, int nrows, int ncolumns, double value)
         return 0;
     }
 }
-int mat2d_increase_size(TMat2D * mat, int nrows, int ncolumns)
+int mat2d_increase_size(TMat2D *mat, int nrows, int ncolumns)
 {
-    if (mat != NULL)
+    if (mat->nRows >= nrows || mat->nColumns >= ncolumns || mat == NULL)
     {
-        mat->data += calloc (mat, (nrows * ncolumns * sizeof(double)));
+        return -1;
+    }
+    else
+    {
+        TMat2D *aux;
+        aux =  mat2D_create (mat->nRows, mat->nColumns);
+        aux->data = mat->data;
+        mat->data = realloc(mat->data, nrows * ncolumns * sizeof(double));
         if (mat->data != NULL)
         {
-            mat->nColumns += ncolumns;
-            mat->nRows += nrows;
+            int cont = 0;
+            for (int i = 0; i < mat->nRows; i++)
+            {
+                for (int j = 0; j < mat->nColumns; j++)
+                {
+                    int aux2 = (i * mat->nColumns) + j;
+                    if (j == aux->nRows || i == aux->nColumns)
+                    {
+                        mat->data[aux2] = 0;
+                    }
+                    else
+                    {
+                        mat->data[aux2] = aux->data[cont];
+                        cont++;
+                    }
+                }
+            }
+        free (aux);
+           return 0;
+    
         }
-        return mat;
     }
 
-    else
-        return NULL;
 }
 void mat2D_print_everything (TMat2D *mat){
 int i, j, aux;
@@ -115,11 +140,11 @@ else printf ("Incompatible indexs.\n");
 }
 int mat2D_adding (TMat2D *mat1, TMat2D *mat2, TMat2D *mat3){
     int i, j, k;
-    for (i =0; i< mat1->ncolumns; i++){
-    for (j = 0; j< mat2->nrows; j++)
+    for (i =0; i< mat1->nColumns; i++){
+    for (j = 0; j< mat2->nRows; j++)
     {
-        for (k = 0; k<mat3->ncolumns; k++)
-        mat2D_set_value (mat3, j, k, );
+        for (k = 0; k<mat3->nColumns; k++){
+        //mat2D_set_value ()
         }
     }
-}
+}}

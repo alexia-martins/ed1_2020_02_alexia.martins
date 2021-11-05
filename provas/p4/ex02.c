@@ -11,7 +11,8 @@ novamente, será devolvido o segundo elemento, e assim sucessivamente.
 (c) Qual a diferença entre o vetor de acesso circular usado na
 implementação de uma fila estática de uma lista circular?
 // responder aqui:
-A diferença é que a lista circular não tem um fim,
+A diferença é que a lista circular não tem um fim, ela sempre irá girar em torno de si
+ja a lista normal possui um.
 
 */
 
@@ -65,31 +66,18 @@ int list_free(TCircList *li)
 // check:<<<comentário: não entendi qual é para avaliar entre as duas soluções apresentadas>>>>
 node list_next(TCircList *li)
 {
-    if (li == NULL)
+    if (li == NULL || li->head == NULL)
     {
-        return INVALID_NULL_POINTER;
+        return NULL;
     }
     if (li->next != li->head)// check:<<<erro: faltou teste de lista vazia>>>>
     {
         li->next = li->next->prox;
-        return li->next;
+        return li->next->data;
     }
     else
     {
-        return li->next;// check:<<<erro: tem que retornar o aluno>>>>
+        return li->next->data;// check:<<<erro: tem que retornar o aluno>>>>
     }
 
 }
-
-/*
-int list_next(TClist *li, struct student *sl){
-  if(li == NULL)
-    return INVALID_NULL_POINTER;
-  if(li->end == NULL)
-    return OUT_OF_MEMORY;
-  Clist_node *aux;
-  aux = li->end->next;
-  *sl = aux->data;
-  return SUCCESS;
-}
-*/
