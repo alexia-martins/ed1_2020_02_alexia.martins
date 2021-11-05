@@ -61,21 +61,22 @@ int list_erase_max_nota_n1(TDLinkedList *li)
         aux = li->start;
         while (aux != NULL)
         {
-            if (aux->data.n1 >= maior)
+            if (aux->data.n1 >= ntmax)
             {
                 ntmax = aux->data.n1;
             }
         }
         aux = li->start;
-        while (curr != NULL)
+        while (aux != NULL)
         {
-            if (aux->data.n1 == maior)
+            if (aux->data.n1 == ntmax)
             {
                 aux2 = list_erase_pos(li, posM);
                 if (aux2 != 0)
                 {
-                    return 1; // elemento nao encontrado na lista para apagar
                     posM--;   // nao "existe" item para ser apagado da lista pos zerada
+                    return 1; // elemento nao encontrado na lista para apagar
+                    
                 }
                 aux = aux->next;
                 posM++;

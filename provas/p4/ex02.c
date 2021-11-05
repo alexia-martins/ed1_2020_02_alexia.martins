@@ -37,6 +37,7 @@ TCircList *list_create()
     {
         *li = NULL;
     }
+        
     li.next = li.head;
     return li;
 }

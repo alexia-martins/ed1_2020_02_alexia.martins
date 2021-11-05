@@ -32,6 +32,6 @@ char aux;
   for (int j =0; j < qtd; j++ {
     stack_top (pilhaLetras, &aux);
     stack_pop (pilhaLetras);
-    printf ("%c ", &aux);
+    printf ("%c ", aux);
   }
 }

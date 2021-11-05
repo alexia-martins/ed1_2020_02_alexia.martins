@@ -38,3 +38,7 @@ int remove_intervalo_lista(Lista *li, int start, int end)
     li->qtd -= ((end - start) + 1);
     }
 }
+
+
+
+REFAZER ESSE TREM

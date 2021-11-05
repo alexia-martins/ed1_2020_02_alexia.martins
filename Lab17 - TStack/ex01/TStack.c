@@ -33,7 +33,7 @@ int stack_push(TStack *st, struct aluno al)
     if (st == NULL)
         return INVALID_NULL_POINTER;
     
-    return list_push_back(st->list, al);
+    return list_push(st->list, al);
 
 }
 

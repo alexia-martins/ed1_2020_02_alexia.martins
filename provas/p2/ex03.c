@@ -51,9 +51,9 @@ int mat2d_increase_size(TMat2D *mat, int nrows, int ncolumns)
             {
                 for (int j = 0; j < mat->nColumns; j++)
                 {
-                    0 * 3 + 2 
+                    //0 * 3 + 2 
                     int aux2 = (i * mat->nColumns) + j;
-                    if (j == aux->nRows || i == aux->nColumns)
+                    if (j >= aux->nRows || i >= aux->nColumns)
                     {
                         mat->data[aux2] = 0;
                     }

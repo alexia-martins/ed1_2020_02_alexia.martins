@@ -25,7 +25,7 @@ Vetor Concatenado = [ 1, 5, 2, 10, 30]
 
 // check:<<<erro: vetor resultante deve ser passado como ponteiro de ponteiro>>>> -4
 
-int contaneta(int *p1, int tam1, int *p2, int tam2, int *res, int *tres)
+int contaneta(int *p1, int tam1, int *p2, int tam2, int **res, int *tres)
 {
     int n = tam1 + tam2;
     if (tam1 == 0 || tam2 == 0)
@@ -48,7 +48,7 @@ int contaneta(int *p1, int tam1, int *p2, int tam2, int *res, int *tres)
         }
 
         *tres = n;
-        res = p3;
+        *res = p3;
     }
     return 0;
 }
@@ -61,7 +61,7 @@ int main()
     int qtd, aux;
     int *p1 = v1, *p2 = v2;
     int *v3 = NULL;// check:<<<erro: variavel quantidade deve ser alocada (esttática mesmo, depois é só usar &)>>>>
-    aux = contaneta (p1, 5, p2, 3, v3, &qtd);
+    aux = contaneta (p1, 5, p2, 3, &v3, &qtd);
     int cont;
     if(aux == -1){
         printf("Nao foi possivel concatenar\n");}
