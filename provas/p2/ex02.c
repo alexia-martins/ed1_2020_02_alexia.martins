@@ -24,7 +24,7 @@ int remove_interval_list(Lista *li, int start, int end)
         int i;
 
 // check:<<<erro: e2.3: Um só laço deve ser usado O(n). Da forma como está envolve deslocar os mesmos elementos várias vezes O(N²)>>>>
-            k = end;
+            int k = end;
             for (int i = 0; i <li->qtd; i++)
             {
                 //poderia usar if (i<start) com conjunto vazio e else fazendo o resto do codigo abaixo mas optei assim pra ficar visivel o raciocinio
