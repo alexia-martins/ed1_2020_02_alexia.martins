@@ -15,70 +15,60 @@ A diferença é que a lista circular não tem um fim, ela sempre irá girar em t
 ja a lista normal possui um.
 
 */
-
-struct node
-{
+struct aluno {
+    int matricula;
+    char nome[30];
+    float n1,n2,n3;
+};
+struct node {
     struct aluno data;
     struct node *prox;
 };
 
-struct TCircList
-{
-    struct node *head;
-    struct node *next;
+struct TCircList{
+    struct node *end;
+    struct node *aux;
 };
 
 typedef struct node node;
+typedef struct aluno aluno;
+typedef struct TCircList TCircList;
 
 TCircList *list_create()
 {
     TCircList *li = (TCircList *)malloc(sizeof(TCircList));
-    if (li == NULL)
+    if (li != NULL)
     {
-        *li = NULL;
-    }
-        
-    li.next = li.head;
+        *li->end = NULL;
+        *li->aux = *li->end;
     return li;
+    }
+        return NULL; 
 }
 
-int list_free(TCircList *li)
-{
-    if (li != NULL && (*li) != NULL)
-    {
-        node *aux;
-        node *atual = *li;
-        while ((*li) != atual->prox)
-        {
-            aux = atual;
-            atual = atual->prox;
-            free(aux);
-        }
-        free(atual);
-        free(li);
-    }
-    return SUCCESS;
-}
 
 // check:<<<erro: faltou teste de lista vazia>>>>
 // check:<<<erro: fez o teste para saber se é a primeira vez que chama a função>>>>
 // check:<<<erro: não retornou o tipo de dado esperado >>>>
 
 // check:<<<comentário: não entendi qual é para avaliar entre as duas soluções apresentadas>>>>
-node list_next(TCircList *li)
+aluno list_next(TCircList *li)
 {
-    if (li == NULL || li->head == NULL)
+    aluno temp;
+    if (li == NULL || li->end == NULL)
     {
         return NULL;
     }
-    if (li->next != li->head)// check:<<<erro: faltou teste de lista vazia>>>>
+    temp = li->end;
+    if (li->end != li->aux)
     {
-        li->next = li->next->prox;
-        return li->next->data;
+        li->aux = li->aux->prox;
+        temp = li->aux->data;
+        return temp;
     }
     else
     {
-        return li->next->data;// check:<<<erro: tem que retornar o aluno>>>>
+        return temp;
     }
 
 }
