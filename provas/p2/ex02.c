@@ -13,7 +13,7 @@ remove_intervalo_lista(lista,5,9)
 
 */
 
-int remove_intervalo_lista(Lista *li, int start, int end)
+int remove_interval_list(Lista *li, int start, int end)
 {
     if (li == NULL || li->qtd <= 0 || start >= li->qtd || end > li->qtd || start <= 0 || end <= 0 || start > end)
     {// check:<<<erro: <=0>>>>
@@ -24,21 +24,20 @@ int remove_intervalo_lista(Lista *li, int start, int end)
         int i;
 
 // check:<<<erro: e2.3: Um só laço deve ser usado O(n). Da forma como está envolve deslocar os mesmos elementos várias vezes O(N²)>>>>
-            
-            for (int j = li->qtd; j >=0; j--)
+            k = end;
+            for (int i = 0; i <li->qtd; i++)
             {
-                if (j>=(start-1) && j < end){
-                for (i = j; i < li->qtd; i++)
-        {
-                li->dados[i] = li->dados[i + 1];
+                //poderia usar if (i<start) com conjunto vazio e else fazendo o resto do codigo abaixo mas optei assim pra ficar visivel o raciocinio
+                if ((i>=(start-1) && i < end) || i>=end){
+                    if (k < li->qtd) {                    
+                    li->dados[i] = li->dados[k];
+                    k++;
+                    }
             }
-            
         }
+        li->qtd -= ((end - start) + 1);
     }
-    li->qtd -= ((end - start) + 1);
-    }
+
 }
-
-
 
 REFAZER ESSE TREM
