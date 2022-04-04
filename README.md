@@ -1,2 +1,3 @@
-# ed1_2020_02_alexia.martins
-
+# Listas de atividades referentes a matéria Estrutura de Dados 1 
+# Universidade Federal de Uberlândia
+#Por: Aléxia Martins Mendonça.
